@@ -1,0 +1,2 @@
+restart terminal 
+or reload bashrc using source ~/.bashrc

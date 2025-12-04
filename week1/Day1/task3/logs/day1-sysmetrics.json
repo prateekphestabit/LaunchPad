@@ -1,0 +1,80 @@
+[
+    {
+        "logNumber": 0,
+        "timestamp": "2025-12-02T11:23:02.523Z",
+        "cpu": {
+            "user": 8136,
+            "system": 7119
+        },
+        "resources": {
+            "userCPUTime": 8143,
+            "systemCPUTime": 7125,
+            "maxRSS": 42300,
+            "sharedMemorySize": 0,
+            "unsharedDataSize": 0,
+            "unsharedStackSize": 0,
+            "minorPageFault": 2603,
+            "majorPageFault": 0,
+            "swappedOut": 0,
+            "fsRead": 0,
+            "fsWrite": 0,
+            "ipcSent": 0,
+            "ipcReceived": 0,
+            "signalsCount": 0,
+            "voluntaryContextSwitches": 16,
+            "involuntaryContextSwitches": 0
+        }
+    },
+    {
+        "logNumber": 1,
+        "timestamp": "2025-12-02T11:24:45.547Z",
+        "cpu": {
+            "user": 7298,
+            "system": 8210
+        },
+        "resources": {
+            "userCPUTime": 7304,
+            "systemCPUTime": 8217,
+            "maxRSS": 42336,
+            "sharedMemorySize": 0,
+            "unsharedDataSize": 0,
+            "unsharedStackSize": 0,
+            "minorPageFault": 2606,
+            "majorPageFault": 0,
+            "swappedOut": 0,
+            "fsRead": 0,
+            "fsWrite": 0,
+            "ipcSent": 0,
+            "ipcReceived": 0,
+            "signalsCount": 0,
+            "voluntaryContextSwitches": 16,
+            "involuntaryContextSwitches": 1
+        }
+    },
+    {
+        "logNumber": 2,
+        "timestamp": "2025-12-04T11:27:41.776Z",
+        "cpu": {
+            "user": 14224,
+            "system": 1094
+        },
+        "resources": {
+            "userCPUTime": 14234,
+            "systemCPUTime": 1094,
+            "maxRSS": 42344,
+            "sharedMemorySize": 0,
+            "unsharedDataSize": 0,
+            "unsharedStackSize": 0,
+            "minorPageFault": 2608,
+            "majorPageFault": 0,
+            "swappedOut": 0,
+            "fsRead": 0,
+            "fsWrite": 0,
+            "ipcSent": 0,
+            "ipcReceived": 0,
+            "signalsCount": 0,
+            "voluntaryContextSwitches": 19,
+            "involuntaryContextSwitches": 1
+        }
+    }
+]
