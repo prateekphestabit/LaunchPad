@@ -1,0 +1,67 @@
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git log --oneline
+40dd373 (HEAD -> main) commit10
+2401556 commit9
+e76ea77 commit8
+4c7df30 commit7
+81b52b2 commit6
+158ffb3 syntax error
+d371c6f commit4
+4f9b0d5 commit3
+0ab7ca7 commit2
+5ad3270 commit1
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ ^C
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect start
+status: waiting for both good and bad commits
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect bad
+status: waiting for good commit(s), bad commit known
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect 5ad3270
+error: Invalid command: you're currently in a bad/good bisect
+fatal: unknown command: '5ad3270'
+
+usage: git bisect start [--term-(new|bad)=<term> --term-(old|good)=<term>]    [--no-checkout] [--first-parent] [<bad> [<good>...]] [--]    [<pathspec>...]
+   or: git bisect (good|bad) [<rev>...]
+   or: git bisect terms [--term-good | --term-bad]
+   or: git bisect skip [(<rev>|<range>)...]
+   or: git bisect next
+   or: git bisect reset [<commit>]
+   or: git bisect visualize
+   or: git bisect replay <logfile>
+   or: git bisect log
+   or: git bisect run <cmd> [<arg>...]
+
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git log --oneline
+40dd373 (HEAD -> main) commit10
+2401556 commit9
+e76ea77 commit8
+4c7df30 commit7
+81b52b2 commit6
+158ffb3 syntax error
+d371c6f commit4
+4f9b0d5 commit3
+0ab7ca7 commit2
+5ad3270 commit1
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect start
+Already on 'main'
+status: waiting for both good and bad commits
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect bad
+status: waiting for good commit(s), bad commit known
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect good 5ad3270
+Bisecting: 4 revisions left to test after this (roughly 2 steps)
+[158ffb38cf0709d18a9ad69f7fe15a7fc072d319] syntax error
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect bad
+Bisecting: 1 revision left to test after this (roughly 1 step)
+[4f9b0d511416966347e2f970b13d7647bf8a303a] commit3
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[d371c6fadf64ff85752137e99d307b619719b3cb] commit4
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ git bisect good
+158ffb38cf0709d18a9ad69f7fe15a7fc072d319 is the first bad commit
+commit 158ffb38cf0709d18a9ad69f7fe15a7fc072d319
+Author: Prateek Prajapati <prateekp.hestabit@gmail.com>
+Date:   Thu Dec 4 19:37:06 2025 +0530
+
+    syntax error
+
+ week1/Day3/task1/task1.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+prateek@HESTABIT-301:~/Prateek/LaunchPad$ 
