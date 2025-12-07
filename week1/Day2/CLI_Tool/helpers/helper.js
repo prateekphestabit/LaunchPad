@@ -21,14 +21,17 @@ function parseArgs(args) {
     while (i < args.length) {
         const cmd = args[i];
 
-        if (cmd === "--unique") {
-            unique = true;
-            i++;
-            continue;
-        }
+        
 
         if (cmd.startsWith("--")) {
             const op = cmd.slice(2);
+
+            if (op === "unique") {
+                unique = true;
+                i++;
+                continue;
+            }
+            
             if (!mapping[op]) {
                 console.error(`Unknown command: ${cmd}`);
                 return null;
