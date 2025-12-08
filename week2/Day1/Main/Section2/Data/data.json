@@ -1,0 +1,74 @@
+[
+    {
+        "imgPath": "Main/Section2/Images/img1.svg",
+        "about": "Travel",
+        "date": "13 March 2023",
+        "title": "Train Or Bus Journey?Which one suits?",
+        "content": "The choice between a train or bus journey depends on various factors such as the distance of the journey, the time available, the cost, and person ",
+        "blogLink": "https://example.com/blog1"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img2.svg",
+        "about": "DEVELOPMENT",
+        "date": "16 June 2024",
+        "title": "Best Website to research for your  next project",
+        "content": "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs",
+        "blogLink": "https://example.com/blog2"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img3.svg",
+        "about": "Sports",
+        "date": "17 June 2024",
+        "title": "How to Be a Dancer in 2023 with proper skills?",
+        "content": "Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment. survival strategies to ensure proactive",
+        "blogLink": "https://example.com/blog3"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img4.svg",
+        "about": "Travel",
+        "date": "18 June 2024",
+        "title": "Who is the best singer on chart?Know him?",
+        "content": "chart by Billboard which ranks the all-time greatest artists based on their performance on the weekly Billboard Hot 100 and  ",
+        "blogLink": "https://example.com/blog4"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img5.svg",
+        "about": "DEVELOPMENT",
+        "date": "19 June 2024",
+        "title": "How to start export import business from home?",
+        "content": "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs ",
+        "blogLink": "https://example.com/blog5"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img6.svg",
+        "about": "Sports",
+        "date": "20 June 2024",
+        "title": "Make some drinks with chocolates chocolates and milk",
+        "content": "Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment. survival strategies to ensure proactive",
+        "blogLink": "https://example.com/blog6"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img7.svg",
+        "about": "Travel",
+        "date": "21 June 2024",
+        "title": "8 Rules of Travelling In Sea You Need To Know",
+        "content": "Travelling in sea has many advantages. Some of the advantages of transporting goods by sea include: you can ship large volumes at costs ",
+        "blogLink": "https://example.com/blog7"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img8.svg",
+        "about": "DEVELOPMENT",
+        "date": "22 June 2024",
+        "title": "How to build strong portfolio and get a Job in UI/UX",
+        "content": "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from ",
+        "blogLink": "https://example.com/blog8"
+    },
+    {
+        "imgPath": "Main/Section2/Images/img9.svg",
+        "about": "Sports",
+        "date": "23 June 2024",
+        "title": "How to Be a Professional Footballer in 2023",
+        "content": "Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment. survival strategies to ensure proactive",
+        "blogLink": "https://example.com/blog9"
+    }
+]

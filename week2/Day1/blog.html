@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<body>
+
+    <header>
+
+        <img src="./Header/zarrinLogo.svg" alt="ZarrinLogo">
+        <span>Zarrin</span>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="./blog.html">Blog</a>
+                </li>
+
+                <li>
+                    <a href="./about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <button><img src="./Header/search-minus.svg" alt="SearchButton"></button>
+        <button>Contact Us</button>
+
+    </header>
+
+    <main>
+
+        <section>
+            <h3>OUR BLOGS</h3>
+
+            <h2>Find our all blogs from here</h2>
+
+            <p>our blogs are written from very research
+                research and well known writers writers 
+                so that  we can provide you the best 
+                blogs and articles articles for you to 
+                read them all along
+            </p>
+        </section>
+        
+        <section id="blogs">
+            <script>
+                const blogSection = document.getElementById('blogs');
+
+                fetch('./Main/Section2/Data/data.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        data.forEach(element => {
+                            blogSection.innerHTML += `
+                                <article>
+                                    <img src="${element.imgPath}" alt="${element.title}">
+                                    <h3>${element.about}</h3>
+                                    <span>${element.date}</span>
+                                    <h4>${element.title}</h4>
+                                    <p>${element.content}</p>
+                                    <a href="${element.blogLink}">Read More...</a>
+                                </article>
+                            `;
+                        });
+                    });
+            </script>
+        </section>
+
+
+        <Section>
+            <h2>
+                Get our stories delivered From us to your inbox weekly.
+            </h2>
+
+            <form>
+                <input type="text" id="email">
+                <button type="submit" >Get started</button>
+            </form>
+        </Section>
+    </main>
+
+
+    <footer>
+        <img src="./Header/zarrinLogo.svg" alt="ZarrinLogo">
+        <span>Zarrin</span>
+
+        <a href="">Home</a>
+        <a href="">Blog</a>
+        <a href="">About</a>
+        <a href="">Contact Us</a>
+
+        <img src="./footer/Images/FB.svg" alt="">
+        <img src="./footer/Images/IG.svg" alt="">
+        <img src="./footer/Images/LN.svg" alt="">
+        <img src="./footer/Images/YT.svg" alt="">
+
+        <hr>
+
+        <span>Copyright Ideapeel Inc © 2023. All Right Reserved</span>
+    </footer>
+
+
+
+</body>
+</html>
