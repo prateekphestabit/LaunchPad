@@ -18,6 +18,7 @@
 .commonBorder{
     border: 6px solid #000;
     border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
 }
 
 .color1{

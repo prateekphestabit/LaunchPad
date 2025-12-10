@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Accordion Heading One",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "title": "Accordion Heading Two",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sitenit incidunt magni doloremque eligendi iure fuga laboriosam tempora."
+  },
+  {
+    "title": "Accordion Heading Three",
+    "content": "This is the content for heading three."
+  },
+  {
+    "title": "Accordion Heading Four",
+    "content": "Content for the fourth accordion item goes here."
+  }
+]
