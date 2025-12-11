@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(226, 82%, 21%);
+}
+
+main{
+    width: 60vh;
+    height: 50vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+header{
+    color: hsl(221, 96%, 20%);
+    font-weight: 600;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: hsl(220, 9%, 94%);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+input {
+    height: 45px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    padding-left: 15px;
+    font-family: 'Poppins';
+}
+
+input:focus {
+    outline: none;
+}
+
+#addBtn {
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: hsl(7, 90%, 60%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+#task{
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#task div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* adjust this color to match your Add button if it's different */
+:root { --add-color: #ff7a00; }
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d1d1;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background: hsl(7, 90%, 60%);
+  border-color: hsl(7, 72%, 55%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* white tick centered, slightly smaller and bolder */
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 5px;             /* reduced width */
+  height: 8px;            /* reduced height */
+  border: solid #fff;
+  border-width: 0 3px 3px 0; /* thicker stroke for bold look */
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,122,0,0.15);
+}
+
+#delete{
+   cursor: pointer;
+   color: hsl(2, 85%, 51%);
+   font-weight: 600;
+   font-family: 'Poppins';
+}
