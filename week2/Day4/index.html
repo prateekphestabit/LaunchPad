@@ -13,7 +13,7 @@
 
         <section>
             <form action="">
-                <input type="text" placeholder="Add Your Task"/>
+                <input type="text" placeholder="Add Your Task" onkeyup="debouncedApi(event.target.value)"/>
                 <button type="button" id="addBtn">Add</button>
             </form>
 
@@ -23,14 +23,18 @@
                         <input type="checkbox">
                         <span> some task here </span>
                     </div>
-                    <span id="delete">x</span>
+                    <div>
+                        <span id="delete">x</span>
+                        <span id="edit">Edit</span>
+                    </div>
                 </div> -->
             </ul>
         </section>
         
     </main>
-
+    <script src="./debounce.js"></script>
     <script src="./script.js"></script>
     
+
 </body>
 </html>

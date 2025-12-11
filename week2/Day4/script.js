@@ -28,6 +28,11 @@ function createTaskElement(text, completed) {
     del.textContent = "x";
     del.id = "delete";
 
+    const edit = document.createElement('span');
+    edit.textContent = "Edit";
+    edit.id = "edit";
+
+    const editDelete = document.createElement('div');
 
     // checkbox event
     checkbox.addEventListener('change', () => {
@@ -43,11 +48,42 @@ function createTaskElement(text, completed) {
         taskList.removeChild(task);
     });
 
+    // edit event
+    edit.addEventListener('click', () => {
+        const newText = prompt("Edit task:", text);
+        if (newText === null || newText.trim() === "") return;
+
+        if (tasks[newText] !== undefined) {
+            alert("Task already exists");
+            return;
+        }
+
+        // Save old completed state
+        const completedState = tasks[text];
+
+        // Delete old key
+        delete tasks[text];
+
+        // Add new key
+        tasks[newText] = completedState;
+
+        // Update storage
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        // Update UI text
+        span.textContent = newText;
+
+        // Update the reference used by other closures
+        text = newText;
+    });
+
     // append elements
     task.appendChild(container);
     container.appendChild(checkbox);
     container.appendChild(span);
-    task.appendChild(del);
+    editDelete.appendChild(del);
+    editDelete.appendChild(edit);
+    task.appendChild(editDelete);
     taskList.appendChild(task);
 }
 
