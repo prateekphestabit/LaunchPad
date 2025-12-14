@@ -185,6 +185,8 @@ const loadAll = async () => {
   displayProducts(allProducts);
 };
 
+loadAll();
+
 (() => {
   navItems[0].children[0].classList.add("underLine");
 
@@ -206,8 +208,6 @@ const loadAll = async () => {
     });
   });
 })();
-
-loadAll(); 
 
 
 
