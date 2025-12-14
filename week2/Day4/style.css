@@ -148,3 +148,8 @@ input[type="checkbox"]:focus {
    font-weight: 600;
    font-family: 'Poppins';
 }
+
+#list{
+    overflow-y: auto;
+    height: 300px;
+}

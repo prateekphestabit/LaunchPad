@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 40px;
+}
+
+header {
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#underLine{
+   display: block;         
+    height: 3px;
+    background-color: black;
+    margin-top: 5px;
+    width: 40%;
+}
+
+.underLine{
+    display: block;      
+    height: 3px;
+    background-color: black;
+    width: 100%;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+nav {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    gap: 6px;
+}
+
+main {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 10vh;
+}
+
+#gridContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
