@@ -39,6 +39,27 @@
         </nav>
     </header>
 
+    <div class="toolbar">
+      <div class="search">
+        <label for="searchInput">Search:</label>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search products…"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="controls">
+        <label for="sortSelect">Sort:</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+        </select>
+      </div>
+    </div>
+
     <main>
         <section id="gridContainer"></section>
     </main>

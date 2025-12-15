@@ -149,7 +149,7 @@ const textPartsOfProduct = (p) => {
     p?.title,
     p?.description,
     ...(Array.isArray(p?.tags) ? p.tags : []),
-    ...(Array.isArray(p?.brand) ? p.brand : [p?.brand]), // harmless if brand is string
+    ...(Array.isArray(p?.brand) ? p.brand : [p?.brand]),
   ];
   return parts.map(normalize).filter(Boolean);
 };
@@ -170,41 +170,94 @@ const filterProductsByGroup = (products, group) => {
 const groupFromNavText = (txt) => {
   const t = normalize(txt).replace(/\s+/g, " ");
   if (t.startsWith("all")) return "all";
-  if (t.startsWith("women's")) return "women";
-  if (t.startsWith("men's")) return "men";
+  if (t.startsWith("women")) return "women";
+  if (t.startsWith("men")) return "men";
   if (t.startsWith("kids")) return "kids";
   if (t.startsWith("accessories")) return "accessories";
   if (t.startsWith("cosmetics")) return "cosmetics";
   return "all";
 };
 
+// --- Sorting + view state ---
+const sortSelect = document.getElementById("sortSelect");
+const searchInput = document.getElementById("searchInput");
+
 let allProducts = [];
+let currentGroup = "all";
+let currentSort = "default";
+let currentQuery = "";
+
+// Search: require ALL words to appear somewhere in product text
+const matchesSearch = (product, query) => {
+  const q = normalize(query);
+  if (!q) return true;
+
+  // split by spaces (handles multiple spaces)
+  const words = q.split(/\s+/).filter(Boolean);
+  const haystack = textPartsOfProduct(product).join(" | ");
+
+  return words.every((w) => haystack.includes(w));
+};
+
+const sortProducts = (products, sortKey) => {
+  const arr = [...products];
+  switch (sortKey) {
+    case "price-asc":
+      return arr.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+    case "price-desc":
+      return arr.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+    default:
+      return arr;
+  }
+};
+
+const applyView = () => {
+  const byGroup =
+    currentGroup === "all"
+      ? allProducts
+      : filterProductsByGroup(allProducts, currentGroup);
+
+  const bySearch = byGroup.filter((p) => matchesSearch(p, currentQuery));
+  const sorted = sortProducts(bySearch, currentSort);
+
+  displayProducts(sorted);
+};
 
 const loadAll = async () => {
   allProducts = await fetchProducts(api);
-  displayProducts(allProducts);
+  applyView();
 };
 
 loadAll();
 
+if (sortSelect) {
+  sortSelect.addEventListener("change", (e) => {
+    currentSort = e.target.value;
+    applyView();
+  });
+}
+
+if (searchInput) {
+  // fires on every keystroke
+  searchInput.addEventListener("input", (e) => {
+    currentQuery = e.target.value;
+    applyView();
+  });
+}
+
 (() => {
-  navItems[0].children[0].classList.add("underLine");
+  // underline first item initially
+  if (navItems?.[0]?.children?.[0]) {
+    navItems[0].children[0].classList.add("underLine");
+  }
 
   navItems.forEach((item) => {
     item.addEventListener("click", () => {
-      navItems.forEach((Item) => Item.children[0].classList.remove("underLine"));
-      item.children[0].classList.add("underLine");
+      navItems.forEach((it) => it.children?.[0]?.classList.remove("underLine"));
+      item.children?.[0]?.classList.add("underLine");
 
-      const group = groupFromNavText(item.innerText);
-
-      if (group === "All") {
-        displayProducts(allProducts);
-        return;
-      }
-
-      const filteredProducts = filterProductsByGroup(allProducts, group);
-      console.log({ group, count: filteredProducts.length, filteredProducts }); // “filtered products response”
-      displayProducts(filteredProducts);
+      currentGroup = groupFromNavText(item.innerText);
+      applyView();
     });
   });
 })();

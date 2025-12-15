@@ -36,11 +36,20 @@ header {
 }
 
 nav {
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: flex;
-    gap: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
 }
 
 main {
@@ -65,4 +74,34 @@ main {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.toolbar {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between; /* left + right */
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 260px;
+}
+
+.search input {
+  padding: 6px 10px;
+  width: min(420px, 45vw);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controls select {
+  padding: 6px 8px;
 }
