@@ -112,6 +112,16 @@ const fetchProducts = async (apiUrl) => {
   }
 };
 
+const debounce = (fn, delay) => {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    }
+};
+
 const displayProducts = (products) => {
   grid.innerHTML = ""; 
   products.forEach((product) => {
@@ -239,9 +249,10 @@ if (sortSelect) {
 
 if (searchInput) {
   // fires on every keystroke
+  const debouncedSearchHandler = debounce(applyView, 300);
   searchInput.addEventListener("input", (e) => {
     currentQuery = e.target.value;
-    applyView();
+    debouncedSearchHandler();
   });
 }
 
