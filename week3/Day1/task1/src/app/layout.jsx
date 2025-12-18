@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white flex flex-row">
+      <body className="bg-[#f8f9fa] flex flex-row">
         <Sidebar />
         <Navbar />
       </body>
