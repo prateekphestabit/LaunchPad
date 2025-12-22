@@ -1,6 +1,6 @@
 export default function PurityDashboardCard() {
   return (
-    <div className="w-[922px] h-[290px] bg-white rounded-2xl p-[17.5px] flex justify-between shadow-sm">
+    <div className="basis-3/5 h-[290px] bg-white rounded-2xl p-[17.5px] flex justify-between shadow-sm">
       <div className="w-[330px] h-[256px]">
         <p className="text-bold text-xs mb-2 text-[#A0AEC0]">Built by developers</p>
 

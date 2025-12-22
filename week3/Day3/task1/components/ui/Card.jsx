@@ -2,7 +2,7 @@ export default function Card({ title, value, delta, icon, color }) {
     const Color = color ? 'text-[#E53E3E]' : 'text-[#48BB78]';
 
     return (
-    <div className="flex items-center justify-between rounded-2xl bg-white w-[382px] h-[80px] pl-[21.5px] pr-[17.5px] shadow-sm">
+    <div className="flex flex-1 items-center justify-between rounded-2xl bg-white h-[80px] pl-[21.5px] pr-[17.5px] shadow-sm">
       <div className="w[107px] h-[44px]">
         <p className="text-xs font-bold text-[#A0AEC0]">{title}</p>
 

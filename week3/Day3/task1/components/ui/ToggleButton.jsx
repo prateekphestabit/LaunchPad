@@ -12,6 +12,5 @@ export default function ToggleButton({content}) {
         </button>
         <p className="font-normal text-xs text-[#A0AEC0]">{content}</p>
     </div>
-
   );
 }

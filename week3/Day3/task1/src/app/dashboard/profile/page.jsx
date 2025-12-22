@@ -14,7 +14,7 @@ export default function ProfilePage() {
   let email = "esthera@simmmple.com";
 
   return (
-    <div className="flex flex-row w-full">
+    <div className="flex flex-row w-full bg-[#f8f9fa]">
         <Sidebar currPage='Profile'/>
         
         <div className='w-full  flex flex-col pr-[24px] pt-[24px] pl-[33.5px] '>
