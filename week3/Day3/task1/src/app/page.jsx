@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title : "Purity Landing page",
+  description : "A clean landing page with navigation options to dashboard and about page."
+} 
+
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">

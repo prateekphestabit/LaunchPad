@@ -1,12 +1,15 @@
 import Sidebar from '@/../components/ui/Sidebar.jsx';
 import Navbar from '@/../components/ui/Navbar';
-import ProfileCard from '@/../components/ui/ProfileCard.jsx';
-import AllProfileInfo from '@/../components/ui/AllProfileInfo.jsx';
-import AllProjects from '@/../components/ui/AllProjects.jsx';
+import ProfileCard from '../../../../components/ui/DashBoard/Profile/ProfileCard.jsx';
+import AllProfileInfo from '../../../../components/ui/DashBoard/Profile/AllProfileInfo.jsx';
+import AllProjects from '../../../../components/ui/DashBoard/Profile/AllProjects.jsx';
 
 import dp from '@/../public/dp1.svg';
 
-
+export const metadata = {
+  title: 'Profile Page',
+  description: 'User profile page with settings, project and personal information.',
+}
 
 export default function ProfilePage() {
 
@@ -28,7 +31,6 @@ export default function ProfilePage() {
           <div className='relative w-full -top-[65px] px-[24px]'><ProfileCard dp={dp} name={name} email={email}/></div>
           
           <AllProfileInfo />
-          
           <AllProjects/>
         </div>
     </div>

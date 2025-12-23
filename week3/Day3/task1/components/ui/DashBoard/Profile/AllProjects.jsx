@@ -1,4 +1,4 @@
-import ProjectCard from "@/../components/ui/ProjectCard.jsx";
+import ProjectCard from "./ProjectCard.jsx";
 import project1 from '@/../public/project1.svg';
 import project2 from '@/../public/project2.svg';
 import project3 from '@/../public/project3.svg';

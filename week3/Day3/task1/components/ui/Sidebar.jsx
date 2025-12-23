@@ -6,6 +6,8 @@ import Image from "next/image";
 import bg from '@/../public/background.svg';
 
 export default function Sidebar({currPage = "Dashboard"}) {
+
+    
   const mainOptions = [
     { key: "dashboard", optionName: "Dashboard", iconPath: "/dashboard.svg" },
     { key: "tables", optionName: "Tables", iconPath: "/chart.svg" },
@@ -36,7 +38,7 @@ export default function Sidebar({currPage = "Dashboard"}) {
           isAboveActive={isAboveActive}
           onClick={() => {
             setActiveOptionName(opt.optionName);
-            if(opt.key === "about")          window.location.href = "/about";
+            if     (opt.key === "about")     window.location.href = "/about";
             else if(opt.key === "profile")   window.location.href = "/dashboard/profile";
             else if(opt.key === "dashboard") window.location.href = "/dashboard";
           }}
@@ -45,31 +47,25 @@ export default function Sidebar({currPage = "Dashboard"}) {
     });
 
   return (
-    // bg-[#F8F9FA]
     <aside className="font-sans w-[246.5px] h-[780.5px] mt-[44px] ml-[17px] flex flex-col items-center"> 
-      {/* logo and title */}
+      
       <div className="font-sans flex flex-row justify-center items-center h-[21px] mb-[27.5px] font-semibold text-sm">
         <img className="h-[22px] w-[22px] mr-[12px]" src="/logo.svg" alt="logo" />
         PURITY UI DASHBOARD
       </div>
 
-      {/* dividing line  */}
       <div className="w-[233px] mb-[22.5] h-[2px] bg-gradient-to-r from-transparent via-gray-200 via-gray-300 via-gray-200 to-transparent "></div>
 
       
       <div className="w-[219.5px] h-[408px]">
-        {/* options */}
         {renderOptions(mainOptions)}
 
-        {/* Account Pages */}
         <span className="block font-bold text-xs ml-[16px] mb-[24px]">ACCOUNT PAGES</span>
 
-        {/* New options below Account Pages */}
         {renderOptions(accountOptions)}
       </div>
 
       <div className="mt-[69.5px] w-[246.5px] h-[465px] flex flex-col">
-        {/* <img className="mr-[17px] ml-[17px]" src="./background.svg" alt="" /> */}
         <Image width={246.5} height={465} src={bg} alt="" />
       </div>
     </aside>

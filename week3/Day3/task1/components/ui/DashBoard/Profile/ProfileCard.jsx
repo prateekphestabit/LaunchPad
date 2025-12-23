@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import ProfileButton from "@/../components/ui/ProfileButton.jsx";
+import ProfileButton from "./ProfileButton.jsx";
 import overview from "@/../public/overview.svg";
 import teams from "@/../public/teams.svg";
 import projects from "@/../public/projects.svg";

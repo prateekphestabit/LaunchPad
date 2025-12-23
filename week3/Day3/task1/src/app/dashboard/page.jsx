@@ -1,9 +1,15 @@
-import Navbar from '../../../components/ui/Navbar.jsx';
-import Sidebar from '../../../components/ui/Sidebar.jsx';
-import Card from '../../../components/ui/Card.jsx';
-import PurityDashboardCard from '../../../components/ui/PurityDashboardCard.jsx';
-import RocketsBannerCard from '../../../components/ui/RocketsBannerCard.jsx';
-import ActiveUsersGraph from '../../../components/ui/ActiveUsersGraph.jsx';
+import Navbar              from '@/../components/ui/Navbar.jsx';
+import Sidebar             from '@/../components/ui/Sidebar.jsx';
+import Card                from '@/../components/ui/DashBoard/Card.jsx';
+import PurityDashboardCard from '@/../components/ui/DashBoard/PurityDashboardCard.jsx';
+import RocketsBannerCard   from '../../../components/ui/DashBoard/RocketsBannerCard.jsx';
+import ActiveUsersGraph    from '../../../components/ui/DashBoard/ActiveUsersGraph.jsx';
+import SalesOverviewCard   from '../../../components/ui/DashBoard/SalesOverviewCard.jsx';
+
+export const metadata = {
+  title: 'Dashboard Page',
+  description: 'Main dashboard page with overview cards and graphs',
+}
 
 export default function DashboardPage() {
   return (
@@ -26,7 +32,7 @@ export default function DashboardPage() {
 
         <div className="mr-[22px] mt-[23.5px] w-full flex gap-[24px]">
           <ActiveUsersGraph />
-          <RocketsBannerCard />
+          <SalesOverviewCard />
         </div>
       </div>
     </div>

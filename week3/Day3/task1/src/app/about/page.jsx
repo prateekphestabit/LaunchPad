@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Sidebar from "../../../components/ui/Sidebar";
 
+export const metadata = {
+  title : "About Page",
+  description : "Learn more about the LaunchPad project"
+}
+
 export default function AboutPage() {
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
