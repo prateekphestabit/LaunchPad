@@ -42,6 +42,7 @@ export default function Sidebar({currPage = "Dashboard"}) {
             else if(opt.key === "profile")   window.location.href = "/dashboard/profile";
             else if(opt.key === "dashboard") window.location.href = "/dashboard";
             else if(opt.key === "tables")    window.location.href = "/tables";
+            else if(opt.key === "signIn")   window.location.href = "/login";
           }}
         />
       );

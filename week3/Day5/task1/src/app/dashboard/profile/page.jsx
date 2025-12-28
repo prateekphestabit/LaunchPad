@@ -1,9 +1,11 @@
 import Sidebar from '@/../components/ui/Sidebar.jsx';
 import Navbar from '@/../components/ui/Navbar';
-import ProfileCard from '../../../../components/ui/DashBoard/Profile/ProfileCard.jsx';
+import ProfileCard from '../../../../components/ui/DashBoard/Profile/TransparentNavbar.jsx';
 import AllProfileInfo from '../../../../components/ui/DashBoard/Profile/AllProfileInfo.jsx';
 import AllProjects from '../../../../components/ui/DashBoard/Profile/AllProjects.jsx';
-
+import overview from "@/../public/overview.svg";
+import teams from "@/../public/teams.svg";
+import projects from "@/../public/projects.svg";
 import dp from '@/../public/dp1.svg';
 
 export const metadata = {
@@ -13,8 +15,14 @@ export const metadata = {
 
 export default function ProfilePage() {
 
-  let name = "Esthera Jackson";
-  let email = "esthera@simmmple.com";
+  const name = "Esthera Jackson";
+  const email = "esthera@simmmple.com";
+  const options = [
+      { name: "OVERVIEW", icon: overview },
+      { name: "TEAMS", icon: teams },
+      { name: "PROJECTS", icon: projects },
+    ];
+
 
   return (
     <div className="flex flex-row w-full bg-[#f8f9fa]">
@@ -26,10 +34,10 @@ export default function ProfilePage() {
               <Navbar pageTitle={'Profile'} color={true}/>
             </div>  
           </div>
-          
-          
-          <div className='relative w-full -top-[65px] px-[24px]'><ProfileCard dp={dp} name={name} email={email}/></div>
-          
+
+
+          <div className='relative w-full -top-[65px] px-[24px]'><ProfileCard dp={dp} name={name} email={email} options={options}/></div>
+
           <AllProfileInfo />
           <AllProjects/>
         </div>

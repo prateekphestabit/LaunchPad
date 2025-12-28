@@ -5,7 +5,7 @@ import project3 from '@/../public/project3.svg';
 
 export default function AllProjects(){
     return (
-        <div className="rounded-2xl shadow-sm px-[22px] pt-[26px] mt-[24px] pb-[28px]">
+        <div className="bg-white rounded-2xl shadow-sm px-[22px] pt-[26px] mt-[24px] pb-[28px]">
             <p className="font-bold text-lg text-[#2D3748] mb-[6px]">Projects</p>
             <p className='font-bold text-[10px] text-[#A0AEC0] mb-[25.5px]'>Architects design houses</p>
 

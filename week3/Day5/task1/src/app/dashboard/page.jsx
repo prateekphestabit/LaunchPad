@@ -16,7 +16,7 @@ export default function DashboardPage() {
     <div className="flex flex-row bg-[#f8f9fa] h-full">
       <Sidebar />
       <div className="flex flex-col p-[33.5px] w-full">
-          <Navbar pageTitle={'Dashboard'}/>
+        <Navbar pageTitle={'Dashboard'}/>
         
         <div className='mr-[22px] mt-[29px] w-full h-[80px] flex gap-[24px]'>
           <Card title={`Today's Money`} value={`$53,000`} delta={`+55%`} icon={`wallet.svg`} color={false}/>
