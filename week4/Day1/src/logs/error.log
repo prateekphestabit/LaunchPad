@@ -49,7 +49,7 @@ yyyy-12-01 17:04:56 [INFO]: MongoDB connected
 
 yyyy-12-01 17:04:56 [INFO]: Loading Middlewares...
 yyyy-12-01 17:04:56 [INFO]: All Middlewares Loaded...
-
+mongoose.connect(path);
 yyyy-12-01 17:04:56 [INFO]: Mounting Routes...
 yyyy-12-01 17:04:56 [INFO]: Root Router mounted at: /
 yyyy-12-01 17:04:56 [INFO]: Routes Mounted... 
@@ -229,3 +229,197 @@ yyyy-12-01 17:39:10 [INFO]: Routes Mounted...
 
 yyyy-12-01 17:39:10 [INFO]: Server is running at http://localhost:3000 with 9868
 
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12829
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12820
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12841
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12823
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12835
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12821
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: Loading App... 
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12847
+
+yyyy-12-01 19:39:40 [INFO]: MongoDB connected 
+
+yyyy-12-01 19:39:40 [INFO]: Loading Middlewares...
+yyyy-12-01 19:39:40 [INFO]: All Middlewares Loaded...
+
+yyyy-12-01 19:39:40 [INFO]: Mounting Routes...
+yyyy-12-01 19:39:40 [INFO]: Root Router mounted at: /
+yyyy-12-01 19:39:40 [INFO]: Routes Mounted... 
+
+yyyy-12-01 19:39:40 [INFO]: Server is running at http://localhost:3000 with 12822
+
+yyyy-12-01 19:39:49 [INFO]: Middleware 1 executed on process pid 12820
+yyyy-12-01 19:39:58 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:58 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:58 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:58 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:58 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:59 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:59 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:59 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:59 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:59 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:39:59 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:00 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:01 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:01 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:01 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:01 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:01 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:01 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:02 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:40:02 [INFO]: Middleware 1 executed on process pid 12829
+yyyy-12-01 19:41:06 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:06 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:06 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:06 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:06 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:07 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:08 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:08 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:08 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:08 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:08 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:08 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:09 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:09 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:09 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:09 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:09 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:09 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:10 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:11 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:11 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:11 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:11 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:11 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:11 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:12 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:12 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:12 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:12 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:12 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:13 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:13 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:13 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:13 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:13 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:14 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:15 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:15 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:15 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:15 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:15 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:15 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:16 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:16 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:16 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:16 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:16 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:17 [INFO]: Middleware 1 executed on process pid 12823
+yyyy-12-01 19:41:39 [INFO]: Middleware 1 executed on process pid 12835
+yyyy-12-01 19:41:41 [INFO]: Middleware 1 executed on process pid 12835
+yyyy-12-01 19:41:42 [INFO]: Middleware 1 executed on process pid 12835
