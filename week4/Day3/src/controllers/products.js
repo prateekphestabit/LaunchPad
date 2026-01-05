@@ -1,5 +1,6 @@
 const productRepo = require('../repositories/product.repository.js');
-const Product = require('../models/products.js');
+const productService = require('../service/product.service.js');
+
 async function getAllProducts(req, res) {
     const products = await productRepo.findAll();
     res.json(products);
@@ -7,14 +8,34 @@ async function getAllProducts(req, res) {
 
 async function getProducts(req, res) {
     try {
-        const { search, minPrice, maxPrice, tags, sort, includeDeleted } = req.query;
+        const { search, minPrice, maxPrice, tags, sort, includeDeleted, page, limit } = req.query;
 
         let sortField, sortOrder;
         if (sort) {
             [sortField, sortOrder] = sort.split(":");
         }
 
-        const products = await productRepo.findWithFilters({
+        if(page && limit){
+            const result = await productService.getFilteredProducts({
+                search,
+                minPrice,
+                maxPrice,
+                tags,
+                sortField,
+                sortOrder,
+                includeDeleted,
+                page,
+                limit
+            });
+            return res.json({
+                products: result.products,
+                total: result.total,
+                page: result.page,
+                limit: result.limit
+            });
+        }
+        
+        const products = await productService.getFilteredProducts({
             search,
             minPrice,
             maxPrice,
@@ -22,6 +43,8 @@ async function getProducts(req, res) {
             sortField,
             sortOrder,
             includeDeleted,
+            page,
+            limit
         });
 
         res.json({
@@ -114,8 +137,6 @@ async function postNewProduct(req, res) {
         res.status(500).send("Server error");
     }
 }
-
-
 
 module.exports = {
     getAllProducts,

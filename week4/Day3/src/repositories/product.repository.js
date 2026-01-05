@@ -15,6 +15,22 @@ class ProductRepository {
         return { products, total };
     }
 
+    async findFilteredPaginated({query, sort, skip, limitNum}) {
+        const [products, total] = await Promise.all([
+            Products.find(query)
+                .sort(sort)
+                .skip(skip)
+                .limit(limitNum)
+                .lean(),
+            Products.countDocuments(query)
+        ]);
+        return { products, total };
+    }
+
+    async findFiltered({query, sort}){
+        return await Products.find(query).sort(sort);
+    }
+
     async findByName(name) {return await Products.findOne({ name });}
 
     async create(data) {return await Products.create(data);}
@@ -25,37 +41,8 @@ class ProductRepository {
 
     async softDeleteByName(name) {return await Products.findOneAndUpdate({ name }, { deleted: true }, { new: true });}
 
-    async findWithFilters({ search, minPrice, maxPrice, tags, sortField, sortOrder, includeDeleted }) {
+    async findWithFilters({ search, minPrice, maxPrice, tags, sortField, sortOrder, includeDeleted, page, limit }) {
         
-        const query = { deleted: false };
-        if(includeDeleted === 'true') query.deleted = true; 
-        
-        let sort = {};
-
-        if (search) {
-            query.$or = [
-                { name: { $regex: search, $options: "i" } },
-                { description: { $regex: search, $options: "i" } }
-            ];
-        }
-
-        if (minPrice || maxPrice) {
-            query.price = {};
-            if (minPrice) query.price.$gte = parseInt(minPrice);
-            if (maxPrice) query.price.$lte = parseInt(maxPrice);
-        }
-
-        if (tags) {
-            const tagsArray = tags.split(",");
-            query.tags = { $in: tagsArray };
-        }
-
-        if (sortField) {
-            sort[sortField] = sortOrder === "desc" ? -1 : 1;
-        }
-
-        const products = await Products.find(query).sort(sort);
-        return products;
     }
 }
 
