@@ -1,0 +1,21 @@
+{
+  "name": "express-api-security-lab",
+  "version": "1.0.0",
+  "description": "Security-focused Express API experiment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.0.0",
+    "helmet": "^7.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
