@@ -1,5 +1,4 @@
 const accountRepo = require('../repositories/account.repository.js');
-const { encrypt } = require('../service/bcrypt');
 
 async function getAllAccounts(req, res) {
     const accounts = await accountRepo.findAll();
@@ -42,10 +41,6 @@ async function deleteAccountWithId(req, res) {
 async function patchAccountWithId(req, res) {
     const updates = req.body;
 
-    if (updates.password) {
-        updates.password = await encrypt(updates.password);
-    }
-
     const updatedAccount = await accountRepo.updateById(req.params.id, updates);
     if (!updatedAccount) return res.status(404).send("Account not found");
 
@@ -63,13 +58,11 @@ async function postNewAccount(req, res) {
             });
         }
 
-        const hashedPassword = await encrypt(password);
-
         const account = await accountRepo.create({
             firstName,
             lastName,
             email,
-            password: hashedPassword,
+            password,
             orders: []
         });
 

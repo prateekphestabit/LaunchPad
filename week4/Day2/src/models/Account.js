@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Order = require('./Order');
+const { encrypt } = require('../service/bcrypt');
 
 const AccountSchema = new mongoose.Schema(
 {
@@ -29,7 +29,8 @@ AccountSchema.virtual('totalOrderAmount').get(function () {
     }, 0);
 });
 
-AccountSchema.set('toJSON',
+AccountSchema.set(
+    'toJSON',
     { 
         virtuals: true,
         versionKey: false,
@@ -37,8 +38,25 @@ AccountSchema.set('toJSON',
             delete ret.id;
             return ret;
         }
-    });
+    }
+);
+
 AccountSchema.set('toObject', { virtuals: true });
+
+AccountSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return;
+    this.password = await encrypt(this.password);
+});
+
+AccountSchema.pre('findOneAndUpdate', async function (next) {
+    const update = this.getUpdate();
+
+    if (!update || !update.password) return;
+
+    update.password = await encrypt(update.password);
+
+    this.setUpdate(update);
+});
 
 const Account = mongoose.model('Account', AccountSchema);
 module.exports = Account;
