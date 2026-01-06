@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "ca4ebddb-5d67-481d-8ebd-8805ab107e98",
+		"name": "Producer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50572500",
+		"_collection_link": "https://prateekp-hestabit-1531876.postman.co/workspace/Prateek-Prajapati's-Workspace~5255997c-4c00-4873-858c-bac890c3ed9d/collection/50572500-ca4ebddb-5d67-481d-8ebd-8805ab107e98?action=share&source=collection_link&creator=50572500"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "prateek@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "yhohohohoho",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "lalallalalalalalalallalalalalallalalallalalla",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/produce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"produce"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
