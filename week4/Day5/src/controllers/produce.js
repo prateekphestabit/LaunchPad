@@ -1,4 +1,4 @@
-const produceJob = require('../producer.js');
+const produceJob = require('../jobs/email.job.js');
 
 async function produceNewJob(req, res){
     try {

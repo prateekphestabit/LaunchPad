@@ -1,6 +1,6 @@
 const { Queue } = require('bullmq');
-const redisConnection = require('./config/redis.js');
-const logger = require('./utils/logger.js');
+const redisConnection = require('../config/redis.js');
+const logger = require('../utils/logger.js');
 
 const myQueue = new Queue('myQueue', {
   connection: redisConnection
@@ -12,7 +12,8 @@ async function produceJob(data) {
       email: data.email,
       subject: data.subject,
       body: data.body
-    }, {
+    }, 
+    {
       attempts: 2,
       backoff: {
         type: 'exponential',
