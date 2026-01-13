@@ -1,0 +1,30 @@
+version: "3.9" # tells which set of rules will docker use to compose this file
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    networks:
+      - day3
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - server1
+      - server2
+  server1:
+    build: ./server1
+    container_name: server1
+    networks:
+      - day3
+
+  server2:
+    build: ./server2
+    container_name: server2
+    networks:
+      - day3
+
+networks:
+  day3:
+    external: true
