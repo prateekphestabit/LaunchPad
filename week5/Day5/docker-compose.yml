@@ -1,0 +1,43 @@
+services:
+  client:
+    build: ./client
+    container_name: client
+    networks:
+      - day5
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    networks:
+      - day5
+    ports:
+      - 8443:443
+      - 8080:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - server1
+
+  server1:
+    build: ./server1
+    container_name: server1
+    networks:
+      - day5
+    depends_on:
+      - mongo
+
+  mongo:
+    build: ./DB
+    container_name: mongo
+    networks:
+      - day5
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+
+networks:
+  day5:
+    driver: bridge
