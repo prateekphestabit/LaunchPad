@@ -1,0 +1,48 @@
+{
+  "features": [
+    {
+      "name": "Survived",
+      "dtype": "int64",
+      "non_null_count": 891,
+      "type": "target",
+      "description": "Feature: Survived"
+    },
+    {
+      "name": "Pclass",
+      "dtype": "int64",
+      "non_null_count": 891,
+      "type": "categorical",
+      "description": "Feature: Pclass"
+    },
+    {
+      "name": "Sex",
+      "dtype": "int64",
+      "non_null_count": 891,
+      "type": "categorical",
+      "description": "Feature: Sex"
+    },
+    {
+      "name": "Age",
+      "dtype": "float64",
+      "non_null_count": 891,
+      "type": "numerical",
+      "description": "Feature: Age"
+    },
+    {
+      "name": "Embarked_S",
+      "dtype": "int64",
+      "non_null_count": 891,
+      "type": "categorical",
+      "description": "Feature: Embarked_S"
+    },
+    {
+      "name": "Embarked_C",
+      "dtype": "int64",
+      "non_null_count": 891,
+      "type": "categorical",
+      "description": "Feature: Embarked_C"
+    }
+  ],
+  "total_samples": 891,
+  "total_features": 6
+}
