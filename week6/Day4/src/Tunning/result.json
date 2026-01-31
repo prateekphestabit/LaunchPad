@@ -1,0 +1,25 @@
+{
+    "model": "NeuralNetwork",
+    "dataset": "Titanic",
+    "best_params": {
+        "n_layers": 2,
+        "units_0": 80,
+        "dropout_0": 0.3038974062289378,
+        "units_1": 80,
+        "dropout_1": 0.12780323185196837,
+        "lr": 0.00019932691508874073,
+        "batch_size": 64
+    },
+    "metrics": {
+        "train_accuracy": 0.8061797752808989,
+        "test_accuracy": 0.7988826815642458,
+        "train_roc_auc": 0.8480604437324255,
+        "test_roc_auc": 0.8442028985507246
+    },
+    "confusion_matrix": {
+        "tn": 103,
+        "fp": 7,
+        "fn": 29,
+        "tp": 40
+    }
+}

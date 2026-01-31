@@ -1,0 +1,2 @@
+timestamp,Pclass,Sex,Age,Embarked_S,Embarked_C,prediction,probability
+2026-01-30T07:02:03.620909,0,0,0.0,0,0,1,0.8440899848937988

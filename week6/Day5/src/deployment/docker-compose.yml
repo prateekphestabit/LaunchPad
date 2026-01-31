@@ -1,0 +1,15 @@
+services:
+  titanic-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: titanic-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/models/best_model.pkl
+      - LOG_PATH=/app/logs/prediction_logs.csv
+    volumes:
+      - ../models/best_model.pkl:/app/models/best_model.pkl:ro
+      - ./prediction_logs.csv:/app/logs/prediction_logs.csv
+    restart: unless-stopped

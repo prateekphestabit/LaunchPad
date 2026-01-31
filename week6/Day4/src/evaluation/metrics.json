@@ -1,0 +1,109 @@
+{
+  "model_comparison": {
+    "best_model": "Neural Network",
+    "evaluation_date": "2026-01-27",
+    "dataset": "Titanic Survival Prediction"
+  },
+  "models": {
+    "Logistic_Regression": {
+      "accuracy": 0.7654,
+      "precision": {
+        "class_0_not_survived": 0.80,
+        "class_1_survived": 0.71,
+        "weighted_avg": 0.76
+      },
+      "recall": {
+        "class_0_not_survived": 0.83,
+        "class_1_survived": 0.67,
+        "weighted_avg": 0.77
+      },
+      "f1_score": {
+        "class_0_not_survived": 0.81,
+        "class_1_survived": 0.69,
+        "weighted_avg": 0.76
+      },
+      "roc_auc": 0.8329
+    },
+    "Random_Forest": {
+      "accuracy": 0.7877,
+      "precision": {
+        "class_0_not_survived": 0.80,
+        "class_1_survived": 0.76,
+        "weighted_avg": 0.79
+      },
+      "recall": {
+        "class_0_not_survived": 0.87,
+        "class_1_survived": 0.65,
+        "weighted_avg": 0.79
+      },
+      "f1_score": {
+        "class_0_not_survived": 0.83,
+        "class_1_survived": 0.70,
+        "weighted_avg": 0.78
+      },
+      "roc_auc": 0.8352
+    },
+    "XGBoost": {
+      "accuracy": 0.7877,
+      "precision": {
+        "class_0_not_survived": 0.80,
+        "class_1_survived": 0.77,
+        "weighted_avg": 0.79
+      },
+      "recall": {
+        "class_0_not_survived": 0.88,
+        "class_1_survived": 0.64,
+        "weighted_avg": 0.79
+      },
+      "f1_score": {
+        "class_0_not_survived": 0.84,
+        "class_1_survived": 0.70,
+        "weighted_avg": 0.78
+      },
+      "roc_auc": 0.8111
+    },
+    "Neural_Network": {
+      "accuracy": 0.7989,
+      "precision": {
+        "class_0_not_survived": 0.80,
+        "class_1_survived": 0.79,
+        "weighted_avg": 0.80
+      },
+      "recall": {
+        "class_0_not_survived": 0.89,
+        "class_1_survived": 0.65,
+        "weighted_avg": 0.80
+      },
+      "f1_score": {
+        "class_0_not_survived": 0.84,
+        "class_1_survived": 0.71,
+        "weighted_avg": 0.79
+      },
+      "roc_auc": 0.8389
+    }
+  },
+  "ranking": {
+    "by_accuracy": [
+      {"model": "Neural_Network", "score": 0.7989},
+      {"model": "Random_Forest", "score": 0.7877},
+      {"model": "XGBoost", "score": 0.7877},
+      {"model": "Logistic_Regression", "score": 0.7654}
+    ],
+    "by_roc_auc": [
+      {"model": "Neural_Network", "score": 0.8389},
+      {"model": "Random_Forest", "score": 0.8352},
+      {"model": "Logistic_Regression", "score": 0.8329},
+      {"model": "XGBoost", "score": 0.8111}
+    ],
+    "by_f1_score_weighted": [
+      {"model": "Neural_Network", "score": 0.79},
+      {"model": "Random_Forest", "score": 0.78},
+      {"model": "XGBoost", "score": 0.78},
+      {"model": "Logistic_Regression", "score": 0.76}
+    ]
+  },
+  "summary": {
+    "winner": "Neural_Network",
+    "reason": "Neural Network achieved the highest test accuracy (79.89%), highest ROC-AUC score (0.8389), and best weighted F1-score (0.79). It demonstrates strong performance across all metrics with good generalization."
+  }
+}
