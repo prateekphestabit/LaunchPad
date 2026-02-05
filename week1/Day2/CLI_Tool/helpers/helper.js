@@ -68,28 +68,35 @@ async function saveUniqueLines(filePath, uniqueLines) {
 
 const measureMemory = () => process.memoryUsage().heapUsed;
 
+// Mutex to prevent race conditions when multiple operations write to the log concurrently
+let logMutex = Promise.resolve();
+
 async function appendPerformanceLog(report) {
-    const logDir = path.resolve(process.cwd(), "logs");
-    await fs.promises.mkdir(logDir, { recursive: true });
+    // Chain this operation to ensure sequential writes
+    logMutex = logMutex.then(async () => {
+        const logDir = path.resolve(process.cwd(), "logs");
+        await fs.promises.mkdir(logDir, { recursive: true });
 
-    const logPath = path.join(logDir, "performance.json");
-    let arr = [];
+        const logPath = path.join(logDir, "performance.json");
+        let arr = [];
 
-    try {
-        const raw = await fs.promises.readFile(logPath, "utf8");
-        if (raw && raw.trim()) arr = JSON.parse(raw);
-    } catch (err) {
-        if (err.code !== "ENOENT") console.error("Failed to read performance log:", err.message);
-       
-    }
+        try {
+            const raw = await fs.promises.readFile(logPath, "utf8");
+            if (raw && raw.trim()) arr = JSON.parse(raw);
+        } catch (err) {
+            if (err.code !== "ENOENT") console.error("Failed to read performance log:", err.message);
+        }
 
-    arr.push(report);
+        arr.push(report);
 
-    try {
-        await fs.promises.writeFile(logPath, JSON.stringify(arr, null, 2), "utf8");
-    } catch (err) {
-        console.error("Failed to write performance log:", err.message);
-    }
+        try {
+            await fs.promises.writeFile(logPath, JSON.stringify(arr, null, 2), "utf8");
+        } catch (err) {
+            console.error("Failed to write performance log:", err.message);
+        }
+    });
+
+    return logMutex;
 }
 
 module.exports = {

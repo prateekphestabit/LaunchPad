@@ -1,10 +1,26 @@
 [
   {
     "file": "/home/prateek/Prateek/LaunchPad/week1/Day2/CLI_Tool/a.txt",
+    "operation": "chars",
+    "count": 28,
+    "executionTimeMS": 5,
+    "memoryMB": -0.1581,
+    "timestamp": "2026-01-31T13:53:17.011Z"
+  },
+  {
+    "file": "/home/prateek/Prateek/LaunchPad/week1/Day2/CLI_Tool/a.txt",
+    "operation": "words",
+    "count": 8,
+    "executionTimeMS": 2,
+    "memoryMB": 0.0538,
+    "timestamp": "2026-01-31T13:53:17.012Z"
+  },
+  {
+    "file": "/home/prateek/Prateek/LaunchPad/week1/Day2/CLI_Tool/a.txt",
     "operation": "lines",
     "count": 5,
-    "executionTimeMS": 6,
-    "memoryMB": 0.8543,
-    "timestamp": "2025-12-04T12:42:07.781Z"
+    "executionTimeMS": 16,
+    "memoryMB": 0.6246,
+    "timestamp": "2026-01-31T13:53:17.026Z"
   }
 ]

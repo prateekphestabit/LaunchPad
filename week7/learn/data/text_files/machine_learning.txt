@@ -1,0 +1,100 @@
+Machine learning is a subset of artificial intelligence focused on learning from data.
+Supervised learning uses labeled datasets to train predictive models.
+Unsupervised learning discovers hidden patterns in unlabeled data.
+Reinforcement learning trains agents using rewards and penalties.
+A dataset is usually split into training, validation, and test sets.
+Features are individual measurable properties of the data.
+Labels represent the expected output in supervised learning.
+Linear regression is used to predict continuous values.
+Logistic regression is commonly used for binary classification.
+Decision trees split data based on feature thresholds.
+Random forests combine multiple decision trees to improve accuracy.
+Gradient boosting builds models sequentially to reduce errors.
+Overfitting occurs when a model memorizes training data.
+Underfitting happens when a model is too simple to learn patterns.
+Regularization techniques help prevent overfitting.
+L1 regularization is also known as Lasso regression.
+L2 regularization is referred to as Ridge regression.
+Neural networks are inspired by the structure of the human brain.
+A perceptron is the basic unit of a neural network.
+Deep learning uses neural networks with many hidden layers.
+Activation functions introduce non-linearity into models.
+ReLU is a widely used activation function in deep learning.
+Sigmoid functions map values between zero and one.
+Softmax is often used in multi-class classification problems.
+Backpropagation is used to update neural network weights.
+Gradient descent optimizes model parameters by minimizing loss.
+The learning rate controls how fast a model learns.
+Batch size defines how many samples are processed at once.
+Epochs represent one complete pass through the training data.
+Loss functions measure how wrong a model’s predictions are.
+Mean squared error is common for regression tasks.
+Cross-entropy loss is popular for classification problems.
+Optimization algorithms include Adam, SGD, and RMSprop.
+Feature scaling improves model convergence and stability.
+Normalization scales data between a fixed range.
+Standardization centers data around zero mean.
+Dimensionality reduction reduces the number of input features.
+Principal Component Analysis is a popular reduction technique.
+K-means clustering groups similar data points together.
+The value of K determines the number of clusters.
+Distance metrics affect clustering performance.
+Cosine similarity is used in text-based machine learning.
+Natural language processing applies ML to human language.
+Tokenization splits text into smaller units.
+Word embeddings represent words as numerical vectors.
+TF-IDF measures word importance in documents.
+Transformers are widely used in modern NLP models.
+Attention mechanisms help models focus on relevant data.
+Large language models are trained on massive datasets.
+Fine-tuning adapts pre-trained models to specific tasks.
+Transfer learning reduces training time and data needs.
+Computer vision enables machines to interpret images.
+Convolutional neural networks are used in image tasks.
+Filters in CNNs detect edges and textures.
+Pooling layers reduce spatial dimensions.
+Object detection identifies items within an image.
+Image classification assigns labels to images.
+Data augmentation increases training data diversity.
+Model evaluation measures how well a model performs.
+Accuracy is a basic evaluation metric.
+Precision measures correctness of positive predictions.
+Recall measures how many actual positives were found.
+F1-score balances precision and recall.
+Confusion matrices visualize classification results.
+Cross-validation improves reliability of evaluation.
+Hyperparameters control model behavior before training.
+Grid search helps find optimal hyperparameters.
+Random search explores parameter combinations efficiently.
+Bias refers to systematic model errors.
+Variance refers to sensitivity to training data.
+The bias-variance tradeoff affects generalization.
+Explainable AI focuses on model interpretability.
+SHAP values help explain individual predictions.
+Model deployment makes ML available in production.
+APIs are often used to serve ML models.
+Latency is critical in real-time ML systems.
+Monitoring detects model performance drift.
+Data drift occurs when input data changes over time.
+Concept drift occurs when target patterns change.
+Retraining keeps models up to date.
+MLOps combines ML with DevOps practices.
+Versioning tracks models and datasets.
+Experiment tracking logs training results.
+Feature stores manage reusable features.
+RAG combines retrieval with generation models.
+Vector databases store embeddings for similarity search.
+Embeddings capture semantic meaning of data.
+Cosine distance is common in vector search.
+Chunking splits documents for better retrieval.
+Context windows limit how much text a model sees.
+Prompt engineering improves model responses.
+Evaluation of RAG includes relevance and grounding.
+Hallucination occurs when models generate false information.
+Guardrails reduce unsafe or incorrect outputs.
+Synthetic data can be used for training models.
+Privacy is important when handling sensitive data.
+Federated learning trains models without sharing raw data.
+Edge ML runs models on local devices.
+Scalability is crucial for large ML systems.
+Machine learning continues to evolve rapidly.

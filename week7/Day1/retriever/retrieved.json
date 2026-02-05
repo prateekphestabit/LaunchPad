@@ -1,0 +1,76 @@
+[
+  {
+    "id": "576b0cf5-3768-cfb4-faa3-2eeb3f7b792d",
+    "content": "Index: 1\nCustomer Id: DD37Cf93aecA6Dc\nFirst Name: Sheryl\nLast Name: Baxter\nCompany: Rasmussen Group\nCity: East Leonard\nCountry: Chile\nPhone 1: 229.077.5154\nPhone 2: 397.884.0519x718\nEmail: zunigavanessa@smith.info\nSubscription Date: 2020-08-24\nWebsite: http://www.stephenson.com/",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/csv_data/customers-100.csv",
+      "row": 0,
+      "doc_index": 0,
+      "content_length": 279
+    },
+    "similarity_score": 0.71171093,
+    "rank": 1
+  },
+  {
+    "id": "ba481c55-0a31-1727-7bde-7c864aef13b6",
+    "content": "Index: 65\nOrganization Id: cBfe4dbAE1699da\nName: Erickson, Andrews and Bailey\nWebsite: https://www.hobbs-grant.com/\nCountry: Eritrea\nDescription: Vision-oriented secondary project\nFounded: 2014\nIndustry: Consumer Electronics\nNumber of employees: 7829",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/csv_data/organizations-100.csv",
+      "row": 64,
+      "doc_index": 264,
+      "content_length": 250
+    },
+    "similarity_score": 0.5846867,
+    "rank": 2
+  },
+  {
+    "id": "dc0a0ff0-2ad2-0f19-eda2-e81ec373f4e2",
+    "content": "harassment and anti-retaliation policies. We believe that fostering diversity, equity, and inclusion is a key element to discovering, developing, and bringing \ntransformative therapies to patients. As of December 31, 2022, 60% of our workforce and 50% of our leadership (at the Director level and above) were \nfemale. In addition, 40% of our workforce and 36% of our leadership (at the Director level and above) were racially or ethnically diverse. We strive to build \na workforce representative of the people we serve and to nurture an inclusive culture where all voices are welcomed, heard, and respected. \nRecruiting and Retention\nWe invest in resources to recruit, develop, and retain the talent needed to achieve our business goals. We believe in supporting our employees to",
+    "metadata": {
+      "producer": "KS - PDF Engine v1.1",
+      "creator": "Chromium",
+      "creationdate": "2023-03-30T12:06:46+00:00",
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/pdf_data/exchangeCommession.pdf",
+      "file_path": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/pdf_data/exchangeCommession.pdf",
+      "total_pages": 119,
+      "format": "PDF 1.7",
+      "title": "Form 10-K for Aptevo Therapeutics INC filed 03/30/2023",
+      "author": "Kaleidoscope - kscope.io",
+      "subject": "10-K filed 03/30/2023",
+      "keywords": "Aptevo Therapeutics INC 10-K",
+      "moddate": "2023-03-30T12:06:49+00:00",
+      "trapped": "",
+      "modDate": "D:20230330120649Z",
+      "creationDate": "D:20230330120646+00'00'",
+      "page": 22,
+      "doc_index": 1555,
+      "content_length": 779
+    },
+    "similarity_score": 0.5751914,
+    "rank": 3
+  },
+  {
+    "id": "5d99ca96-da61-90c5-51e7-5b02e0368283",
+    "content": "Index: 31\nOrganization Id: ccBcC32adcbc530\nName: Sloan, Mays and Whitehead\nWebsite: http://lawson.com/\nCountry: Chad\nDescription: Face-to-face high-level conglomeration\nFounded: 1997\nIndustry: Civil Engineering\nNumber of employees: 365",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/csv_data/organizations-100.csv",
+      "row": 30,
+      "doc_index": 230,
+      "content_length": 235
+    },
+    "similarity_score": 0.5644208,
+    "rank": 4
+  },
+  {
+    "id": "e87c3ea6-75c0-f285-79b1-084481b7ab7d",
+    "content": "Index: 24\nOrganization Id: 5Ec4C272bCf085c\nName: Robbins-Cummings\nWebsite: http://donaldson-wilkins.com/\nCountry: Belgium\nDescription: Organic non-volatile hierarchy\nFounded: 1991\nIndustry: Pharmaceuticals\nNumber of employees: 5038",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/csv_data/organizations-100.csv",
+      "row": 23,
+      "doc_index": 223,
+      "content_length": 231
+    },
+    "similarity_score": 0.56151927,
+    "rank": 5
+  }
+]

@@ -9,7 +9,7 @@ TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
 # Send request
 if curl -fs --max-time 5 "$URL" > /dev/null; then
-    echo "[$TIMESTAMP] ✔ Healthy"
+    echo "[$TIMESTAMP] ✔ Healthy" >> "$LOG_FILE"
 else
     echo "[$TIMESTAMP] FAILED to reach $URL" >> "$LOG_FILE"
 fi
