@@ -1,0 +1,113 @@
+Python is a high-level programming language focused on readability.
+It uses significant whitespace to define code blocks.
+A Python file typically ends with the .py extension.
+The Python interpreter executes code line by line.
+Python supports multiple programming paradigms.
+You can write procedural, object-oriented, or functional code.
+Variables are created when they are first assigned.
+Python is dynamically typed and uses duck typing.
+Indentation is part of the language syntax.
+The standard style guide is called PEP 8.
+Comments begin with a hash symbol.
+Triple-quoted strings can be used for docstrings.
+The built-in print function outputs text to the console.
+Input can be read using the input function.
+Lists are ordered, mutable sequences.
+Tuples are ordered, immutable sequences.
+Dictionaries store key-value pairs.
+Sets store unique, unordered items.
+A for loop iterates over items in a sequence.
+A while loop repeats while a condition is true.
+The range function generates a sequence of numbers.
+Functions are defined with the def keyword.
+Functions can return values using return.
+Default arguments are supported in function definitions.
+Lambda functions are small anonymous functions.
+Modules are imported with the import statement.
+The math module provides common math functions.
+The datetime module handles dates and times.
+The pathlib module works with file system paths.
+Exceptions are handled with try and except blocks.
+You can raise exceptions using the raise keyword.
+Classes are defined with the class keyword.
+Methods are functions defined inside classes.
+The __init__ method initializes new objects.
+Inheritance allows one class to extend another.
+Python supports multiple inheritance.
+List comprehensions offer concise list creation.
+Dictionary comprehensions build dictionaries succinctly.
+Generators yield values lazily with the yield keyword.
+Iterators follow the iterator protocol.
+The len function returns the length of a sequence.
+The type function returns an object’s type.
+The isinstance function checks type relationships.
+Slicing extracts subsequences from sequences.
+Negative indices count from the end.
+Strings are immutable sequences of characters.
+String formatting can be done with f-strings.
+The format method also supports string formatting.
+The join method concatenates an iterable of strings.
+The split method divides a string by a delimiter.
+File I/O uses the open function.
+Use with to ensure files are closed properly.
+Reading text uses the read or readline methods.
+Writing text uses the write or writelines methods.
+CSV files can be processed with the csv module.
+JSON data can be handled with the json module.
+Virtual environments isolate project dependencies.
+pip is the standard package installer for Python.
+Requirements can be pinned in a requirements.txt file.
+Type hints can be added using the typing module.
+Static type checking is available with tools like mypy.
+Tests are commonly written with pytest or unittest.
+The __name__ == "__main__" guard runs scripts directly.
+Packages are directories with an __init__.py file.
+The sys module provides access to interpreter internals.
+The os module provides operating system interfaces.
+The subprocess module runs external commands.
+The logging module provides configurable logging.
+Context managers manage resources cleanly.
+Decorators modify function behavior.
+The functools module contains higher-order functions.
+The collections module provides specialized containers.
+The itertools module supports iterator building blocks.
+The dataclasses module simplifies data containers.
+The enum module defines enumerations.
+The heapq module implements a heap queue.
+The random module generates pseudo-random values.
+The secrets module generates secure random values.
+The statistics module computes basic statistics.
+The re module supports regular expressions.
+The pathlib Path object abstracts filesystem paths.
+Use venv to create a virtual environment.
+Use python -m pip to ensure the right pip is used.
+The help function opens interactive documentation.
+The dir function lists attributes on an object.
+The __doc__ attribute holds a docstring.
+The __repr__ method returns a developer-friendly string.
+The __str__ method returns a user-friendly string.
+The pass keyword is a no-op placeholder.
+The break keyword exits a loop.
+The continue keyword skips to the next loop iteration.
+The else clause can follow loops for completion logic.
+The else clause can follow try blocks for success logic.
+The finally clause runs cleanup code regardless of errors.
+Global variables can be accessed with the global keyword.
+Nonlocal variables can be accessed with nonlocal.
+Comprehensions can include conditional filters.
+Generators can be composed with generator expressions.
+Python uses reference counting and a garbage collector.
+The GIL affects multi-threaded CPU-bound code.
+Multiprocessing can bypass the GIL for CPU tasks.
+Asyncio enables asynchronous programming.
+Await pauses execution until a coroutine completes.
+Async functions are defined with async def.
+An async for loop iterates over async iterables.
+An async with statement uses async context managers.
+Python emphasizes readability and simple syntax.
+The community maintains extensive documentation.
+The Python Package Index is abbreviated as PyPI.
+Python is often used for data science and automation.
+Python can be embedded in other applications.
+Python is open source and widely adopted.
+The language continues to evolve with new releases.
