@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "32dde3db-d404-4e50-9616-6ab0db641efa",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50572500",
+		"_collection_link": "https://prateekp-hestabit-1531876.postman.co/workspace/Prateek-Prajapati's-Workspace~5255997c-4c00-4873-858c-bac890c3ed9d/collection/50572500-32dde3db-d404-4e50-9616-6ab0db641efa?action=share&source=collection_link&creator=50572500"
+	},
+	"item": [
+		{
+			"name": "getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductWithName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/name/product1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"name",
+						"product1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProductWithName",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/name/product1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"name",
+						"product1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editProductWithName",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/name/product1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"name",
+						"product1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postNewProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "product1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "xyz zxy",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/products/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPaginatedProducts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getFilteredProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/get?minPrice=1&maxPrice=5&sort=price:desc&tags=apple,samsung",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"get"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "1"
+						},
+						{
+							"key": "maxPrice",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "price:desc"
+						},
+						{
+							"key": "tags",
+							"value": "apple,samsung"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SoftDeletWithName",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/softDelete/product5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"softDelete",
+						"product5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

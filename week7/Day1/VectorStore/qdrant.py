@@ -64,7 +64,7 @@ class QdrantVectorStore:
             point_id = stable_id(doc)
             
             # Prepare payload (metadata)
-            payload = dict(doc.metadata)
+            payload = dict(doc.metadata) #meta data ko flatern kr k save kr le ga ye 
             payload['doc_index'] = i
             payload['content_length'] = len(doc.page_content)
             payload['content'] = doc.page_content  # Store the actual text content

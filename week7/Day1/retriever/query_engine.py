@@ -59,7 +59,7 @@ rag_retriever = RAGRetriever(qdrant_store, embedding_model)
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(CURR_DIR, "retrieved.json")
 
-retrieved_docs = rag_retriever.retrieve("sheryl baxter working at rasmussen group")
+retrieved_docs = rag_retriever.retrieve("what is machine learning", top_k=5)
 
 # Save to JSON file
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:

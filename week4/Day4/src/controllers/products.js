@@ -1,5 +1,7 @@
 const productRepo = require('../repositories/product.repository.js');
 const productService = require('../service/product.service.js');
+const { ProductZodSchema } = require("./product.schema.js");
+
 
 async function getAllProducts(req, res) {
     const products = await productRepo.findAll();
@@ -111,7 +113,9 @@ async function patchProductWithName(req, res) {
 
 async function postNewProduct(req, res) {
     try {
-        const { name, description, price } = req.body;
+        //zod validation 
+        const validatedData = ProductZodSchema.parse(req.body);
+        const { name, description, price, tags } = validatedData;
        
         const existing = await productRepo.findByName(name);
         if (existing) {
@@ -145,6 +149,13 @@ async function postNewProduct(req, res) {
             productId: product.name
         });
     } catch (err) {
+        // Handle Zod validation errors
+        if (err.name === 'ZodError') {
+            return res.status(400).json({
+                message: "Validation failed",
+                errors: err.errors
+            });
+        }
         console.error(err);
         res.status(500).send("Server error");
     }

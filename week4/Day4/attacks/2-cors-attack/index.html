@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Backend Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    pre {
+      margin-top: 20px;
+      background: #f4f4f4;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Send Request to Backend</h2>
+
+  <button id="sendBtn">Send Request</button>
+
+  <pre id="response">Response will appear here...</pre>
+
+  <script>
+    const button = document.getElementById('sendBtn');
+    const responseBox = document.getElementById('response');
+
+    button.addEventListener('click', async () => {
+      responseBox.textContent = 'Sending request...';
+
+      try {
+        const res = await fetch('http://localhost:8000/products/getAll', {
+          method: 'GET',
+        });
+
+        const data = await res.text();
+        responseBox.textContent = `Status: ${res.status}\n\n${data}`;
+      } catch (err) {
+        responseBox.textContent = 'Error: ' + err.message;
+      }
+    });
+  </script>
+
+</body>
+</html>
