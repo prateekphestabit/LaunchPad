@@ -12,8 +12,8 @@ const AccountSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Order'
     }]
-}
-);
+});
+
 
 AccountSchema.virtual('fullName').get(function () {
     return this.lastName
@@ -60,3 +60,4 @@ AccountSchema.pre('findOneAndUpdate', async function (next) {
 
 const Account = mongoose.model('Account', AccountSchema);
 module.exports = Account;
+

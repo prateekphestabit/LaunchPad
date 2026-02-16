@@ -1,0 +1,1 @@
+1. browser -> nginx -> frontend -> backend -> mongodb

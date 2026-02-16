@@ -8,7 +8,7 @@ DF = pd.read_csv(PROCESSED_PATH)
 #label encoding
 DF['Sex'] = DF['Sex'].map({'male': 1, 'female': 0})
 
-#one-hot encoding
+#one-hotencoding
 DF['Embarked_S'] = (DF['Embarked'] == 'S').astype(int)
 DF['Embarked_C'] = (DF['Embarked'] == 'C').astype(int)
 DF['Embarked_Q'] = (DF['Embarked'] == 'Q').astype(int)

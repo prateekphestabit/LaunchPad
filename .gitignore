@@ -2,3 +2,5 @@ node_modules
 .venv
 vectorStore/
 models/
+pgdata/
+.env

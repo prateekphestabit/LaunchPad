@@ -1,7 +1,5 @@
-make a network first to run this 
+## run using : 
+docker compose up -d
 
-docker network create day2
-
-after running this you can simply do:
-docker compose up -d --build
-
+## stop using 
+docker compose down

@@ -5,7 +5,7 @@ const updateData = (newData) => {data = newData};
 const uploadData = () => {
   console.log(data);
   
-  // Call your own API route (runs in browser, hits localhost:3000)
+  // Call API route (runs in browser, hits localhost:3000)
   fetch('/api/data', {
     method: 'POST',
     headers: {

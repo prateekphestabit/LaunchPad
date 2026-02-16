@@ -14,7 +14,7 @@ from sentence_transformers import SentenceTransformer
 embedding_model = SentenceTransformer("./models/bge-base-en-v1.5")
 
 class RAGRetriever:
-    #Handles query-based retrieval from the vector store
+    #Handles query-based retrieval from the vector ssys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))tore
     
     def __init__(self, vector_store, embedding_model):
         self.vector_store = vector_store

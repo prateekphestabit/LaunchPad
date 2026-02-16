@@ -1,5 +1,3 @@
-version: "3.9" # tells which set of rules will docker use to compose this file
-
 services:
   nginx:
     build: ./nginx

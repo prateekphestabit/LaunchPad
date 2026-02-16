@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 rawDataPath = '/home/prateek/Prateek/LaunchPad/week6/Day1/src/data/raw/data.csv'
 PROCESSED_PATH = '/home/prateek/Prateek/LaunchPad/week6/Day1/src/data/processed'

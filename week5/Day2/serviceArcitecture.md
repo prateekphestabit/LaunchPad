@@ -6,7 +6,7 @@
              /         |        \
             /          |         \
            v           v          v
-DB container   serve_Container  client_Container(exposed PORT 3000)
+DB container   server_Container  client_Container(exposed PORT 3000)
                                                                A
                                                                |
                                                                |

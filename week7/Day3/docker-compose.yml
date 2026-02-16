@@ -1,0 +1,8 @@
+services:
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - /home/prateek/Prateek/LaunchPad/week7/Day2/data/vectorStore:/qdrant/storage

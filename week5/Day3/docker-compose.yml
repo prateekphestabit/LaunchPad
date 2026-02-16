@@ -27,4 +27,3 @@ services:
 
 networks:
   day3:
-    external: true

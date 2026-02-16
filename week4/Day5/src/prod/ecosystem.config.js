@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "week4-api",
+      name: "week4Day5-producer-api",
       cwd: "/home/prateek/Prateek/LaunchPad/week4/Day5/src",
       script: "server.js",
       instances: 1,
@@ -22,7 +22,7 @@ module.exports = {
       }
     },
     {
-      name: "email-worker",
+      name: "worker-started-executing-jobs",
       cwd: "/home/prateek/Prateek/LaunchPad/week4/Day5/src",
       script: "worker.js",
       instances: 1,

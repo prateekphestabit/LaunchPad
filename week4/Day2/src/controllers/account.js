@@ -12,7 +12,7 @@ async function getPaginatedAccounts(req, res) {
         const skip = (page - 1) * limit;
 
         const { accounts, total } = await accountRepo.findPaginated({ skip, limit });
-
+        
         res.json({
             page,
             limit,

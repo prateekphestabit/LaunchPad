@@ -40,4 +40,4 @@ volumes:
 
 networks:
   day5:
-    driver: bridge
+    external: true
