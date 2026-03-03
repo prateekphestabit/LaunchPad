@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const logger = require('./../utils/logger.js');
 async function connectMongoose(path){
     try {
-        mongoose.connect(path);
+        await mongoose.connect(path);
         logger.info("MongoDB connected \n");
     } catch (error) {
         logger.error("MongoDB connection error:", error);

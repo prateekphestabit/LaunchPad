@@ -1,0 +1,38 @@
+model,prompt,tokens_per_sec,latency_sec,ram_gb,response
+BASE,"ssistant.</s>
+<|user|>
+What is compound ",6.97,14.34,4.61,"Compound interest is a mathematical concept that describes the accumulation of interest earned over time on an investment. Here's how it works:
+
+1. Si"
+BASE,"ssistant.</s>
+<|user|>
+A stock bought at",6.47,15.29,4.62,"To calculate the total return percentage, divide the gain by the initial investment. In this example, the stock purchased at $50 and sold at $70 with "
+BASE,"ssistant.</s>
+<|user|>
+Extract financial",5.85,17.1,4.62,"Extract financial figures:
+
+Apple
+- Revenue: $81.8 billion
+- Gross profit: $22.8 billion
+- Net income: $19.9 billion
+- Gross margin: 28.9%
+- Operating"
+FINE-TUNED,"ssistant.</s>
+<|user|>
+What is compound ",5.29,10.02,5.14,"Compound interest is an equation which represents the interest earned on a sum of money over a certain period, calculated using the formula: (interest"
+FINE-TUNED,"ssistant.</s>
+<|user|>
+A stock bought at",5.24,6.68,5.14,Return on investment (ROI) = (Value of stock after dividend payment – Value of stock before dividend payment) / Value of stock before dividend payment
+FINE-TUNED,"ssistant.</s>
+<|user|>
+Extract financial",4.81,9.14,5.14,"Financial figures extracted from the given text by the following regular expression pattern:
+^(?<financial_feature>([0-9]+[.]?[0-9]{3})).*$"
+QUANTISED-Q4,"ssistant.</s>
+<|user|>
+What is compound ",28.26,1.45,2.91,Compound interest is a financial concept that describes the accumulation of interest over time. It is a calculation that involves the annual interest 
+QUANTISED-Q4,"ssistant.</s>
+<|user|>
+A stock bought at",25.97,0.89,2.91,(100 - 70) * 100 / (50 + 70)
+QUANTISED-Q4,"ssistant.</s>
+<|user|>
+Extract financial",15.06,0.6,2.91,Revenue: $81.8B

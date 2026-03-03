@@ -4,3 +4,7 @@ vectorStore/
 models/
 pgdata/
 .env
+llama.cpp/
+merged_model/
+quantized/
+adapters/
