@@ -70,15 +70,46 @@ class RAGRetriever:
         return retrieved_docs
 
 
-# Use the imported qdrant_store (connects to existing collection)
-rag_retriever = RAGRetriever(qdrant_store, embedding_model)
-
-# Retrieve documents and save to JSON file
-OUTPUT_FILE = os.path.join(CURR_DIR, "retrieved.json")
+if __name__ == "__main__":
+    # Add parent directory to path for generator import
+    sys.path.append(os.path.dirname(CURR_DIR))
+    from generator.generator import generate_answer
     
-retrieved_docs = rag_retriever.retrieve("machine learning", top_k=5, score_threshold=0.0)
-
-# Save to JSON file
-with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-    json.dump(retrieved_docs, f, indent=2, ensure_ascii=False)
-print(f"Retrieved {len(retrieved_docs)} documents and saved to {OUTPUT_FILE}")
+    # Ask user for question
+    print("RAG Retrieval and Generation System")
+    print("="*60)
+    query = input("\nEnter your question: ").strip()
+    
+    if not query:
+        print("No question provided. Exiting.")
+        sys.exit(1)
+    
+    # Use the imported qdrant_store (connects to existing collection)
+    rag_retriever = RAGRetriever(qdrant_store, embedding_model)
+    
+    # Retrieve documents and save to JSON file
+    OUTPUT_FILE = os.path.join(CURR_DIR, "retrieved.json")
+    
+    print(f"\n{'='*60}")
+    print(f"Question: {query}")
+    print(f"{'='*60}\n")
+    
+    retrieved_docs = rag_retriever.retrieve(query, top_k=5, score_threshold=0.0)
+    
+    # Save to JSON file
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(retrieved_docs, f, indent=2, ensure_ascii=False)
+    print(f"Retrieved {len(retrieved_docs)} documents and saved to {OUTPUT_FILE}\n")
+    
+    # Generate answer using Groq
+    print(f"{'='*60}")
+    print("Generating answer using Groq LLM...")
+    print(f"{'='*60}\n")
+    
+    answer = generate_answer(query, retrieved_docs)
+    
+    print(f"\n{'='*60}")
+    print("ANSWER:")
+    print(f"{'='*60}")
+    print(answer)
+    print(f"{'='*60}\n")

@@ -5,7 +5,7 @@ from transformers import CLIPProcessor, CLIPModel
 from qdrant_client import QdrantClient
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6333"
+QDRANT_URL = "http://localhost:6344"
 COLLECTION_NAME = "rag_multimodal"
 
 # Load CLIP model

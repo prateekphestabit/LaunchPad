@@ -12,7 +12,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - /home/prateek/Prateek/LaunchPad/week7/Day4/pgdata:/var/lib/postgresql/data
 
 volumes:
   postgres_data:

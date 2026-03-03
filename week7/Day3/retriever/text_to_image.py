@@ -6,7 +6,7 @@ from transformers import CLIPProcessor, CLIPModel
 from qdrant_client import QdrantClient
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6333"
+QDRANT_URL = "http://localhost:6344"
 COLLECTION_NAME = "rag_multimodal"
 
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
@@ -25,10 +25,7 @@ def embed_text_query(text_query: str):
         inputs = {k: v.to("cpu") for k, v in inputs.items()}
         outputs = model.get_text_features(**inputs)
         
-       
-        text_features = outputs.pooler_output
-
-        text_features = text_features / text_features.norm(p=2, dim=-1, keepdim=True)
+        text_features = outputs / outputs.norm(p=2, dim=-1, keepdim=True)
         
     return text_features.cpu().numpy().flatten().tolist()
 
@@ -56,7 +53,6 @@ def search_images_by_text(text_query, top_k = 5):
 
 
 def display_results(results):
-    """Display search results"""
     print("\n" + "="*60)
     print("TEXT TO IMAGE SEARCH RESULTS")
     print("="*60)

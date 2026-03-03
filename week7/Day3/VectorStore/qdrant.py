@@ -2,17 +2,15 @@ import os
 import pickle 
 import numpy as np
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct, SparseVectorParams, Modifier, SparseVector
-from qdrant_client.models import Document as QdrantDocument
+from qdrant_client.models import Distance, VectorParams, PointStruct
 import hashlib
 import uuid
-from langchain_core.documents import Document
-from typing import List, Union
-from dataclasses import asdict
+from typing import List
+
 
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6333"
+QDRANT_URL = "http://localhost:6344"
 
     
 def stable_id(text): #imagepath(for images) and  ocr + caption text() for text documents
