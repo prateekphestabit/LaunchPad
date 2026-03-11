@@ -27,7 +27,7 @@ def split_documents(documents, chunk_tokens, overlap_tokens):
         length_function=len, #function to select unit of length in this case chars
         # length function accepts only a function so direct values will not work
         # length_function=len(texts.split()), #function to select unit of length in this case words
-        separators=["\n\n", "\n", " ", ""] #if chunk is beg split on para -> line -> space -> chars
+        separators=["\n\n", "\n", " ", ""] #if chunk is big split on para -> line -> space -> chars
     )
 
     chunks = text_splitter.split_documents(documents)

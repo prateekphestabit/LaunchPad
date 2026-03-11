@@ -1,3 +1,57 @@
 [
   {
-    "point": 
+    "id": "1d149f21-e694-c787-4943-3fad862cef25",
+    "content": "Machine learning is a subset of artificial intelligence focused on learning from data.\nSupervised learning uses labeled datasets to train predictive models.\nUnsupervised learning discovers hidden patterns in unlabeled data.\nReinforcement learning trains agents using rewards and penalties.\nA dataset is usually split into training, validation, and test sets.\nFeatures are individual measurable properties of the data.\nLabels represent the expected output in supervised learning.\nLinear regression is used to predict continuous values.\nLogistic regression is commonly used for binary classification.\nDecision trees split data based on feature thresholds.\nRandom forests combine multiple decision trees to improve accuracy.\nGradient boosting builds models sequentially to reduce errors.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2138,
+      "content_length": 784
+    },
+    "similarity_score": 0.8553232,
+    "rank": 1
+  },
+  {
+    "id": "52adac69-052e-0089-9f3b-345973018b9f",
+    "content": "Bias refers to systematic model errors.\nVariance refers to sensitivity to training data.\nThe bias-variance tradeoff affects generalization.\nExplainable AI focuses on model interpretability.\nSHAP values help explain individual predictions.\nModel deployment makes ML available in production.\nAPIs are often used to serve ML models.\nLatency is critical in real-time ML systems.\nMonitoring detects model performance drift.\nData drift occurs when input data changes over time.\nConcept drift occurs when target patterns change.\nRetraining keeps models up to date.\nMLOps combines ML with DevOps practices.\nVersioning tracks models and datasets.\nExperiment tracking logs training results.\nFeature stores manage reusable features.\nRAG combines retrieval with generation models.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2144,
+      "content_length": 768
+    },
+    "similarity_score": 0.69302255,
+    "rank": 2
+  },
+  {
+    "id": "e2f845a3-28ce-2d59-c256-3df185bdc101",
+    "content": "Random forests combine multiple decision trees to improve accuracy.\nGradient boosting builds models sequentially to reduce errors.\nOverfitting occurs when a model memorizes training data.\nUnderfitting happens when a model is too simple to learn patterns.\nRegularization techniques help prevent overfitting.\nL1 regularization is also known as Lasso regression.\nL2 regularization is referred to as Ridge regression.\nNeural networks are inspired by the structure of the human brain.\nA perceptron is the basic unit of a neural network.\nDeep learning uses neural networks with many hidden layers.\nActivation functions introduce non-linearity into models.\nReLU is a widely used activation function in deep learning.\nSigmoid functions map values between zero and one.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2139,
+      "content_length": 760
+    },
+    "similarity_score": 0.6690731,
+    "rank": 3
+  },
+  {
+    "id": "19b706df-85cb-7f78-ac8b-4f29a68390ae",
+    "content": "ReLU is a widely used activation function in deep learning.\nSigmoid functions map values between zero and one.\nSoftmax is often used in multi-class classification problems.\nBackpropagation is used to update neural network weights.\nGradient descent optimizes model parameters by minimizing loss.\nThe learning rate controls how fast a model learns.\nBatch size defines how many samples are processed at once.\nEpochs represent one complete pass through the training data.\nLoss functions measure how wrong a model’s predictions are.\nMean squared error is common for regression tasks.\nCross-entropy loss is popular for classification problems.\nOptimization algorithms include Adam, SGD, and RMSprop.\nFeature scaling improves model convergence and stability.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2140,
+      "content_length": 751
+    },
+    "similarity_score": 0.6686137,
+    "rank": 4
+  },
+  {
+    "id": "f6954fe7-8cdb-c6cb-e1fb-48f537569ad9",
+    "content": "Optimization algorithms include Adam, SGD, and RMSprop.\nFeature scaling improves model convergence and stability.\nNormalization scales data between a fixed range.\nStandardization centers data around zero mean.\nDimensionality reduction reduces the number of input features.\nPrincipal Component Analysis is a popular reduction technique.\nK-means clustering groups similar data points together.\nThe value of K determines the number of clusters.\nDistance metrics affect clustering performance.\nCosine similarity is used in text-based machine learning.\nNatural language processing applies ML to human language.\nTokenization splits text into smaller units.\nWord embeddings represent words as numerical vectors.\nTF-IDF measures word importance in documents.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day1/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2141,
+      "content_length": 750
+    },
+    "similarity_score": 0.65486723,
+    "rank": 5
+  }
+]

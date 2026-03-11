@@ -65,9 +65,3 @@ This Streamlit application integrates three RAG systems:
 Make sure the following `.env` files exist:
 - `Day2/.env` - Groq API credentials
 - `Day4/.env` - PostgreSQL and Groq credentials
-
-## Troubleshooting
-
-- **Qdrant connection error**: Ensure Docker containers are running
-- **Module import errors**: Make sure you're using the correct virtual environment
-- **Image not found**: Check that image paths in Qdrant are absolute paths

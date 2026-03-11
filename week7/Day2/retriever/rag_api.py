@@ -1,6 +1,3 @@
-"""
-API wrapper for Day2 RAG system to be used with Streamlit
-"""
 import sys
 import os
 
@@ -65,15 +62,6 @@ class RAGRetriever:
 
 
 def ask_rag(question: str) -> str:
-    """
-    Main API function to get answer from RAG system
-    
-    Args:
-        question: User's question
-        
-    Returns:
-        Generated answer as string
-    """
     # Initialize retriever
     rag_retriever = RAGRetriever(qdrant_store, embedding_model)
     

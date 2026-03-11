@@ -1,6 +1,3 @@
-"""
-API wrapper for Day3 Image RAG system to be used with Streamlit
-"""
 import os
 import torch
 from typing import List, Dict
@@ -27,8 +24,7 @@ def embed_text_query(text_query: str):
         )
         inputs = {k: v.to("cpu") for k, v in inputs.items()}
         outputs = model.get_text_features(**inputs)
-        text_features = outputs.pooler_output
-        text_features = text_features / text_features.norm(p=2, dim=-1, keepdim=True)
+        text_features = outputs / outputs.norm(p=2, dim=-1, keepdim=True)
         
     return text_features.cpu().numpy().flatten().tolist()
 

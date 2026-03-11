@@ -4,9 +4,12 @@ import torch
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 from qdrant_client import QdrantClient
+from dotenv import load_dotenv
+from pathlib import Path
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6344"
+load_dotenv(Path(CURR_DIR).parent / ".env")
+QDRANT_URL = os.environ.get("qdranturl")
 COLLECTION_NAME = "rag_multimodal"
 
 # Load CLIP model
@@ -25,7 +28,13 @@ def embed_image_query(image_path: str):
         )
         inputs = {k: v.to("cpu") for k, v in inputs.items()}
         outputs = model.get_image_features(**inputs)
-        image_features = outputs.pooler_output
+        
+        if hasattr(outputs, 'image_embeds'):
+            image_features = outputs.image_embeds
+        elif hasattr(outputs, 'pooler_output'):
+            image_features = outputs.pooler_output
+        else:
+            image_features = outputs  # Already a tensor
        
         # Normalize embedding
         image_features = image_features / image_features.norm(p=2, dim=-1, keepdim=True)
@@ -34,8 +43,6 @@ def embed_image_query(image_path: str):
 
 
 def search_text_by_image(image_path: str, top_k: int = 5):
-    from qdrant_client.models import NamedVector
-    
     # Embed the image query
     query_embedding = embed_image_query(image_path)
     
@@ -74,7 +81,7 @@ def display_results(results):
 
 
 if __name__ == "__main__":
-    image_path = "/home/prateek/Prateek/LaunchPad/week7/Day3Again/data/Raw/image_data/exchangeCommession_page6_img1.jpeg"
+    image_path = "/home/prateek/Prateek/LaunchPad/week7/Day3/data/Raw/image_data/exchangeCommession_page6_img1.jpeg"
     
     results = search_text_by_image(image_path, top_k=5)
     display_results(results)

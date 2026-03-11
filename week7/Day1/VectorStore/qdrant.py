@@ -7,9 +7,11 @@ import hashlib
 import uuid
 from langchain_core.documents import Document
 from typing import List
-
+from dotenv import load_dotenv
+from pathlib import Path
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(Path(CURR_DIR).parent / ".env")
 
     
 def stable_id(doc: Document) -> str:
@@ -60,7 +62,7 @@ class QdrantVectorStore:
             # point_id = f"doc_{uuid.uuid4().hex[:8]}_{i}" 
             # this is not a safe option redudant data will get pushed with different id 
             # so we will use hash of content as id 
-            # also poiny_id accepst only unsigned int or UUIDs as string 
+            # also point_id accepst only unsigned int or UUIDs as string 
             point_id = stable_id(doc)
             
             # Prepare payload (metadata)
@@ -96,7 +98,7 @@ class QdrantVectorStore:
 # Create a reusable qdrant_store instance for querying (does NOT add documents on import)
 qdrant_store = QdrantVectorStore(
     collection_name="rag_documents",
-    url="http://localhost:6333",
+    url=os.environ.get("qdranturl", "http://localhost:6333"),
     vector_size=768
 )
 

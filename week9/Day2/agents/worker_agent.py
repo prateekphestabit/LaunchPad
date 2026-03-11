@@ -11,7 +11,7 @@ from autogen_core.model_context import BufferedChatCompletionContext
 from autogen_core.models import ModelInfo, ModelFamily
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 
-def create_answer_agent():
+def create_worker_agent():
     model_client = OpenAIChatCompletionClient(
         model=os.environ.get("GROQ_MODEL"),
         base_url="https://api.groq.com/openai/v1",
@@ -61,7 +61,7 @@ def save_output(output, worker_id):
         f.write(output)
 
 async def run_worker(query, plan, worker_id):
-    agent = create_answer_agent()
+    agent = create_worker_agent()
 
     prompt = f"""# Plan structure to answer the query:\n\n\n{plan}\n\n\n
 # answer this query using above plan:\n{query}

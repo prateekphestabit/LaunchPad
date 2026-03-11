@@ -1,0 +1,5 @@
+{
+    "tasks": [
+        {"agent": "code_agent", "task": "write a python script to print numbers from 1 to 10"}
+    ]
+}

@@ -1,6 +1,3 @@
-"""
-API wrapper for Day4 SQL RAG system to be used with Streamlit
-"""
 import sys
 import os
 from dotenv import load_dotenv
@@ -22,14 +19,5 @@ pipeline = SQLPipeline(DB_CONFIG)
 
 
 def ask_sql(question: str) -> dict:
-    """
-    Main API function to get SQL query results and summary
-    
-    Args:
-        question: User's question
-        
-    Returns:
-        Dict with sql, result_table, summary, error
-    """
     result = pipeline.ask(question)
     return result

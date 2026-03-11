@@ -3,15 +3,18 @@ import torch
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 from qdrant_client import QdrantClient
+from dotenv import load_dotenv
+from pathlib import Path
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6344"
+load_dotenv(Path(CURR_DIR).parent / ".env")
+
+QDRANT_URL = os.environ.get("qdranturl")
 COLLECTION_NAME = "rag_multimodal"
 
 # Load CLIP model
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
 processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-
 
 def embed_image_query(image_path: str):
     pil_image = Image.open(image_path).convert("RGB")
@@ -39,9 +42,7 @@ def embed_image_query(image_path: str):
     return image_features.cpu().numpy().flatten().tolist()
 
 
-def search_similar_images(image_path: str, top_k: int = 5):
-    from qdrant_client.models import NamedVector
-    
+def search_similar_images(image_path: str, top_k: int = 5): 
     # Embed the image query
     query_embedding = embed_image_query(image_path)
     
@@ -72,7 +73,7 @@ def display_results(results, query_image_path: str):
         result_path = payload.get('path', 'N/A')
         
         # Check if it's the same image (self-match)
-        is_self = os.path.abspath(result_path) == os.path.abspath(query_image_path) if result_path != 'N/A' else False
+        is_self = os.path.abspath(result_path) == query_image_path if result_path != 'N/A' else False
         
         print(f"  Image Path: {result_path}" + (" [SELF]" if is_self else ""))
         print(f"  Source PDF: {payload.get('source_pdf', 'N/A')}")
@@ -81,7 +82,7 @@ def display_results(results, query_image_path: str):
 
 
 if __name__ == "__main__":
-    image_path = "/home/prateek/Prateek/LaunchPad/week7/Day3Again/data/Raw/image_data/exchangeCommession_page6_img1.jpeg"
+    image_path = "/home/prateek/Prateek/LaunchPad/week7/Day3/data/Raw/image_data/exchangeCommession_page6_img1.jpeg"
     
     results = search_similar_images(image_path, top_k=5)
     display_results(results, image_path)

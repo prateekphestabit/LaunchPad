@@ -1,17 +1,7 @@
 import psycopg2
-import psycopg2.extras
-import os
-from typing import Optional
 
-
-DEFAULT_ROW_LIMIT = 500
-DEFAULT_TIMEOUT_MS = 10_000  # 10 s
-
-
-class ExecutionError(Exception):
-    """Raised when query execution fails."""
-    pass
-
+DEFAULT_ROW_LIMIT = 20
+DEFAULT_TIMEOUT_MS = 10_000  # 10 seconds
 
 class SafeExecutor:
     def __init__(self, db_config, row_limit = DEFAULT_ROW_LIMIT, timeout_ms = DEFAULT_TIMEOUT_MS,):
@@ -19,39 +9,31 @@ class SafeExecutor:
         self.row_limit = row_limit
         self.timeout_ms = timeout_ms
 
-    def execute(self, query: str) -> dict:
+    def execute(self, query):
         conn = psycopg2.connect(**self.db_config)
-        try:
-            conn.set_session(readonly=True, autocommit=False)
+        conn.set_session(readonly=True, autocommit=False)
+        cur =  conn.cursor()
 
-            cur =  conn.cursor()
-            # ── guardrails ──────────────────────────────────────────
-            cur.execute(f"SET statement_timeout = {self.timeout_ms};")
-            cur.execute(query)
+        # ── guardrails ──────────────────────────────────────────
+        cur.execute(f"SET statement_timeout = {self.timeout_ms};")
+        cur.execute(query)
 
-            columns = [desc[0] for desc in cur.description] if cur.description else []
-            rows = cur.fetchall()
+        columns = [desc[0] for desc in cur.description] if cur.description else []
+        rows = cur.fetchall()
 
-            truncated = len(rows) > self.row_limit
-            if truncated:
-                rows = rows[: self.row_limit]
+        truncated = len(rows) > self.row_limit
+        if truncated:
+            rows = rows[: self.row_limit]
 
-            return {
-                "columns": columns,
-                "rows": rows,
-                "row_count": len(rows),
-                "truncated": truncated,
-            }
-        except psycopg2.Error as e:
-            raise ExecutionError(f"Query execution failed: {e}") from e
-        finally:
-            conn.rollback()
-            conn.close()
-
+        return {
+            "columns": columns,
+            "rows": rows,
+            "row_count": len(rows),
+            "truncated": truncated,
+        }
+        
     # ── convenience: pretty text table ──────────────────────────────────
-    @staticmethod
     def to_text_table(result: dict) -> str:
-        """Render the result dict as a plain-text table."""
         if not result["columns"]:
             return "(no results)"
 

@@ -6,12 +6,11 @@ from qdrant_client.models import Distance, VectorParams, PointStruct
 import hashlib
 import uuid
 from typing import List
-
-
+from dotenv import load_dotenv
+from pathlib import Path
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6344"
-
+load_dotenv(Path(CURR_DIR).parent / ".env")
     
 def stable_id(text): #imagepath(for images) and  ocr + caption text() for text documents
     hash_bytes = hashlib.sha256(text.encode("utf-8")).digest()[:16]
@@ -114,7 +113,7 @@ class QdrantStore:
 # Create multimodal store instance
 qdrant_multimodal_store = QdrantStore(
     collection_name="rag_multimodal",
-    url=QDRANT_URL,
+    url=os.environ.get("qdranturl"),
     vector_size=512  # CLIP dimension
 )
 

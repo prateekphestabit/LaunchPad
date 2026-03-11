@@ -29,14 +29,7 @@ class ResultSummarizer:
         self.model = MODEL
         self.client = Groq(api_key=self.api_key)
 
-    def summarize(
-        self,
-        question: str,
-        sql_query: str,
-        result_table: str,
-        row_count: int,
-        truncated: bool,
-    ) -> str:
+    def summarize(self, question ,sql_query ,result_table ,row_count ,truncated):
         user_content = (
             f"Answer this question using ONLY the data below.\n\n"
             f"**Question:** {question}\n\n"
@@ -56,4 +49,4 @@ class ResultSummarizer:
             temperature=0.3,
         )
 
-        return response.choices[0].message.content.strip()
+        return response.choices[-1].message.content.strip()

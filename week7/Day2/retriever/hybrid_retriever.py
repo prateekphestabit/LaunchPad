@@ -80,10 +80,6 @@ if __name__ == "__main__":
     print("="*60)
     query = input("\nEnter your question: ").strip()
     
-    if not query:
-        print("No question provided. Exiting.")
-        sys.exit(1)
-    
     # Use the imported qdrant_store (connects to existing collection)
     rag_retriever = RAGRetriever(qdrant_store, embedding_model)
     
@@ -102,14 +98,9 @@ if __name__ == "__main__":
     print(f"Retrieved {len(retrieved_docs)} documents and saved to {OUTPUT_FILE}\n")
     
     # Generate answer using Groq
-    print(f"{'='*60}")
     print("Generating answer using Groq LLM...")
-    print(f"{'='*60}\n")
-    
+
     answer = generate_answer(query, retrieved_docs)
     
-    print(f"\n{'='*60}")
     print("ANSWER:")
-    print(f"{'='*60}")
     print(answer)
-    print(f"{'='*60}\n")

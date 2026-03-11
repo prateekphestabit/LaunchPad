@@ -25,10 +25,14 @@ SQL_SYSTEM_PROMPT = """You are an expert SQL assistant for PostgreSQL.
 """
 
 CORRECTION_PROMPT = """The SQL you generated is invalid.
+    INVALID SQL: {bad_sql}
 
-    ERROR(S):
-    {errors}
+    ERROR(S): {errors}
 
+    BLOCKED KEYWORDS: [ "DROP", "DELETE", "TRUNCATE",
+    "ALTER", "INSERT", "UPDATE", "CREATE", "GRANT",
+    "REVOKE", "EXEC", "EXECUTE", "COPY", "\\copy",]
+    
     ORIGINAL QUESTION: {question}
 
     DATABASE SCHEMA:
@@ -44,55 +48,16 @@ class SQLGenerator:
 
     # ── main entry ──────────────────────────────────────────────────────
     def generate(self, question: str, schema_prompt: str) -> dict:
-        """
-        Generate SQL for *question* given the schema context.
-
-        Returns:
-          {
-            "sql": str,
-            "attempts": int,
-            "model": str,
-          }
-        """
         sql = self._call_llm(question, schema_prompt)
-        return {
-            "sql": sql,
-            "attempts": 1,
-            "model": MODEL,
-        }
+        return sql
 
     # ── error-correction loop ───────────────────────────────────────────
-    def correct(
-        self,
-        question: str,
-        schema_prompt: str,
-        bad_sql: str,
-        errors: list[str],
-    ) -> dict:
-        attempts = 0
-        current_errors = errors
-
-        while attempts < MAX_CORRECTION_ATTEMPTS:
-            attempts += 1
-            corrected = self._call_correction(
-                question, schema_prompt, current_errors
-            )
-            return {
-                "sql": corrected,
-                "attempts": attempts,
-                "model": MODEL,
-            }
-
-        # exhausted attempts — return last attempt anyway
-        return {
-            "sql": bad_sql,
-            "attempts": attempts,
-            "model": MODEL,
-        }
+    def correct(self, question, schema_prompt, bad_sql, errors):
+        corrected = self._call_correction(question, schema_prompt, bad_sql, errors)
+        return corrected
 
     # ── LLM interaction ─────────────────────────────────────────────────
     def _call_llm(self, question: str, schema_prompt: str) -> str:
-        # replace {schema} in the system prompt with the actual schema context
         system = SQL_SYSTEM_PROMPT.format(schema=schema_prompt) 
         
         response = self.client.chat.completions.create(
@@ -104,16 +69,15 @@ class SQLGenerator:
             max_tokens=1024,
             temperature=0,
         )
-        sqlQuery = response.choices[0].message.content.strip()
+        sqlQuery = response.choices[-1].message.content.strip()
         return sqlQuery
 
-    def _call_correction(
-        self, question: str, schema_prompt: str, errors: list[str]
-    ) -> str:
+    def _call_correction(self, question, schema_prompt, bad_sql, errors):
         prompt = CORRECTION_PROMPT.format(
-            errors="\n".join(f"• {e}" for e in errors),
+            errors=errors,
             question=question,
             schema=schema_prompt,
+            bad_sql=bad_sql,
         )
         response = self.client.chat.completions.create(
             model=MODEL,
@@ -121,7 +85,7 @@ class SQLGenerator:
             max_tokens=1024,
             temperature=0,
         )
-        sql = response.choices[0].message.content.strip()
+        sql = response.choices[-1].message.content.strip()
         return sql
 
 

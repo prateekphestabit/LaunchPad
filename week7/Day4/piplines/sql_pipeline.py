@@ -4,35 +4,47 @@ import os
 # allow imports from the project root
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.schema_loader import SchemaLoader
 from utils.query_validator import QueryValidator
-from utils.safe_executor import SafeExecutor, ExecutionError
+from utils.safe_executor import SafeExecutor
 from utils.result_summarizer import ResultSummarizer
 from generator.sql_generator import SQLGenerator
 
 MAX_CORRECTION_ROUNDS = 2
 
+schema = '''
+albums(
+  album_id INTEGER PRIMARY KEY NOT NULL,
+  title CHARACTER VARYING NOT NULL,
+  artist_id INTEGER NOT NULL REFERENCES artists(artist_id),
+  release_date DATE,
+  price NUMERIC
+)
+
+artists(
+  artist_id INTEGER PRIMARY KEY NOT NULL,
+  name CHARACTER VARYING NOT NULL,
+  genre CHARACTER VARYING,
+  country CHARACTER VARYING
+)
+
+sales(
+  sale_id INTEGER PRIMARY KEY NOT NULL,
+  album_id INTEGER NOT NULL REFERENCES albums(album_id),
+  sale_date DATE NOT NULL,
+  quantity INTEGER NOT NULL,
+  total_amount NUMERIC NOT NULL
+)
+'''
 
 class SQLPipeline:
     def __init__(self, db_config):
-        self.schema_loader = SchemaLoader(db_config)
         self.generator = SQLGenerator()
-        self.validator = QueryValidator(db_config)
+        self.validator = QueryValidator()
         self.executor = SafeExecutor(db_config)
         self.summarizer = ResultSummarizer()
 
-        # eagerly load schema so it's cached for all queries
-        self._schema: dict | None = None
-        self._schema_prompt: str | None = None
-
-    # ── lazy schema init ────────────────────────────────────────────────
-    def _ensure_schema(self):
-        if self._schema_prompt is None:
-            self._schema_prompt = self.schema_loader.schema_to_prompt()
-
     # ── main entry point ────────────────────────────────────────────────
     def ask(self, question: str) -> dict:
-        self._ensure_schema()
         result = {
             "question": question,
             "sql": None,
@@ -43,59 +55,50 @@ class SQLPipeline:
             "error": None,
         }
 
-        # ── Generate SQL ────────────────────────────────────────
+        # ── Step 1: Generate SQL ────────────────────────────────────────
         print(f"\nQuestion: {question}")
-        gen = self.generator.generate(question, self._schema_prompt)
-        sql = gen["sql"]
+        sql = self.generator.generate(question, schema)
         result["sql"] = sql
-        print(f"Generated SQL (attempt {gen['attempts']}):\n   {sql}\n")
+        print(f"Generated SQL (attempt 1):\n   {sql}\n")
 
-        # ── Validate + self-correct loop ────────────────────
+        # ── Step 2: Validate + self-correct loop ────────────────────
         for round_num in range(1, MAX_CORRECTION_ROUNDS + 1):
-            validation = self.validator.validate(sql, explain_check=True)
+            validation = self.validator.validate(sql)
             result["validation"] = validation
 
-            if validation["valid"]:
-                sql = validation["cleaned_query"]
-                result["sql"] = sql
+            if validation:
                 print(f"Validation passed...")
                 break
 
-            print(
-                f"Validation failed (round {round_num}): "
-                f"{validation['errors']}"
-            )
+            print(f"Validation failed (round {round_num})")
 
             if round_num < MAX_CORRECTION_ROUNDS:
-                correction = self.generator.correct(
-                    question, self._schema_prompt, sql, validation["errors"]
+                sql = self.generator.correct(
+                    question,
+                    schema,
+                    sql, 
+                    "there was either a syntax error or blocked keywords in the SQL. Please fix it."
                 )
-                sql = correction["sql"]
                 result["sql"] = sql
-                print(f"Corrected SQL (attempt {correction['attempts']}):\n   {sql}\n")
-        else:
-            # all correction rounds exhausted
-            if not result["validation"]["valid"]:
-                result["error"] = (
-                    "SQL could not be corrected after "
-                    f"{MAX_CORRECTION_ROUNDS} attempts: "
-                    + "; ".join(result["validation"]["errors"])
-                )
-                return result
-
-        # ── Execute ─────────────────────────────────────────────
-        try:
-            exec_result = self.executor.execute(sql)
-            result["result"] = exec_result
-            table_text = SafeExecutor.to_text_table(exec_result)
-            result["result_table"] = table_text
-            print(f"Results ({exec_result['row_count']} rows):\n{table_text}\n")
-        except ExecutionError as e:
-            result["error"] = str(e)
-            print(f"Execution error: {e}")
+                print(f"Corrected SQL (attempt {round_num}):\n   {sql}\n")
+            
+        if not result["validation"]:
+            result["error"] = (
+                "SQL could not be corrected after "
+                f"{MAX_CORRECTION_ROUNDS} attempts: "
+            )
             return result
 
-        # ── Step : Summarize ───────────────────────────────────────────
+        # ── Step 3: Execute ─────────────────────────────────────────────
+        
+        exec_result = self.executor.execute(sql)
+        result["result"] = exec_result
+        table_text = SafeExecutor.to_text_table(exec_result)
+        result["result_table"] = table_text
+        print(f"Results ({exec_result['row_count']} rows):\n{table_text}\n")
+    
+
+        # ── Step 4: Summarize ───────────────────────────────────────────
         try:
             summary = self.summarizer.summarize(
                 question=question,

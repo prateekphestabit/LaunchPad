@@ -4,9 +4,13 @@ import torch
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 from qdrant_client import QdrantClient
+from dotenv import load_dotenv
+from pathlib import Path
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
-QDRANT_URL = "http://localhost:6344"
+load_dotenv(Path(CURR_DIR).parent / ".env")
+
+QDRANT_URL = os.environ.get("qdranturl")
 COLLECTION_NAME = "rag_multimodal"
 
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
@@ -31,7 +35,6 @@ def embed_text_query(text_query: str):
 
 
 def search_images_by_text(text_query, top_k = 5):
-    from qdrant_client.models import NamedVector
     
     # Embed the text query
     query_embedding = embed_text_query(text_query)

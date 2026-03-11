@@ -1,14 +1,3 @@
-"""
-Multi-RAG System — Streamlit Interface
-Integrates Day2 (Text RAG), Day3 (Image RAG), Day4 (SQL RAG)
-
-Flow
-────
-  /ask       → Day2  hybrid_retriever (via rag_api)   → LLM answer   → UI
-  /askImage  → Day3  text_to_image   (via image_api)  → images       → UI
-  /askSql    → Day4  main.py         (via sql_api)    → LLM answer   → UI
-"""
-
 import streamlit as st
 import sys
 import os
@@ -16,20 +5,12 @@ import traceback
 from pathlib import Path
 from PIL import Image
 
-# ──────────────────────────────────────────────────────────────────────────
-# 1.  RESOLVE PROJECT PATHS
-# ──────────────────────────────────────────────────────────────────────────
 CURR_FILE = Path(__file__).resolve()        # .../week7/Day5/deployment/app.py
 WEEK7_DIR = CURR_FILE.parents[2]            # .../week7
 DAY2_DIR  = WEEK7_DIR / "Day2"
 DAY3_DIR  = WEEK7_DIR / "Day3"
 DAY4_DIR  = WEEK7_DIR / "Day4"
 
-# ──────────────────────────────────────────────────────────────────────────
-# 2.  LOAD .env FILES *BEFORE* ANY PROJECT IMPORTS
-#     Day2/.env  →  GROQ_API_KEY, GROQ_MODEL
-#     Day4/.env  →  PG_DATABASE, PG_USER, PG_PASSWORD, PG_HOST, PG_PORT
-# ──────────────────────────────────────────────────────────────────────────
 from dotenv import load_dotenv
 
 load_dotenv(DAY2_DIR / ".env")                  # GROQ creds

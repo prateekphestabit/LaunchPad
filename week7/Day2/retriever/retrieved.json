@@ -1,44 +1,5 @@
 [
   {
-    "id": "6c6e545a-b336-2314-5830-ea85b2115bcc",
-    "content": "result in loss of clinical trial data or damage to the integrity of that data. \nIf we are unable to implement and maintain adequate organizational and technical measures to prevent such security breaches or privacy violations, \nor to respond adequately in the event of a breach, our operations could be disrupted, and we may suffer loss of reputation, problems with regulatory \nauthorities, financial loss and other negative consequences. In addition, these breaches and other inappropriate access can be difficult to detect, and any \ndelay in identifying them may lead to increased harm of the type described above.\nIf a breach of our information technology systems occurs, we may incur additional costs related to repairing or rebuilding our internal systems,",
-    "metadata": {
-      "producer": "KS - PDF Engine v1.1",
-      "creator": "Chromium",
-      "creationdate": "2023-03-30T12:06:46+00:00",
-      "source": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/pdf_data/exchangeCommession.pdf",
-      "file_path": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/pdf_data/exchangeCommession.pdf",
-      "total_pages": 119,
-      "format": "PDF 1.7",
-      "title": "Form 10-K for Aptevo Therapeutics INC filed 03/30/2023",
-      "author": "Kaleidoscope - kscope.io",
-      "subject": "10-K filed 03/30/2023",
-      "keywords": "Aptevo Therapeutics INC 10-K",
-      "moddate": "2023-03-30T12:06:49+00:00",
-      "trapped": "",
-      "modDate": "D:20230330120649Z",
-      "creationDate": "D:20230330120646+00'00'",
-      "page": 61,
-      "doc_index": 1858,
-      "content_length": 761
-    },
-    "similarity_score": 0.5,
-    "rrf_score": 0.5,
-    "rank": 1
-  },
-  {
-    "id": "3d895d07-1947-3f6a-18bf-3a767b7358eb",
-    "content": "The pathlib Path object abstracts filesystem paths.\nUse venv to create a virtual environment.\nUse python -m pip to ensure the right pip is used.\nThe help function opens interactive documentation.\nThe dir function lists attributes on an object.\nThe __doc__ attribute holds a docstring.\nThe __repr__ method returns a developer-friendly string.\nThe __str__ method returns a user-friendly string.\nThe pass keyword is a no-op placeholder.\nThe break keyword exits a loop.\nThe continue keyword skips to the next loop iteration.\nThe else clause can follow loops for completion logic.\nThe else clause can follow try blocks for success logic.\nThe finally clause runs cleanup code regardless of errors.\nGlobal variables can be accessed with the global keyword.\nNonlocal variables can be accessed with nonlocal.",
-    "metadata": {
-      "source": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/text_data/python_intro.txt",
-      "doc_index": 2135,
-      "content_length": 799
-    },
-    "similarity_score": 0.5,
-    "rrf_score": 0.5,
-    "rank": 2
-  },
-  {
     "id": "a58188b6-2da5-3625-671c-e17d516c029f",
     "content": "Machine learning is a subset of artificial intelligence focused on learning from data.\nSupervised learning uses labeled datasets to train predictive models.\nUnsupervised learning discovers hidden patterns in unlabeled data.\nReinforcement learning trains agents using rewards and penalties.\nA dataset is usually split into training, validation, and test sets.\nFeatures are individual measurable properties of the data.\nLabels represent the expected output in supervised learning.\nLinear regression is used to predict continuous values.\nLogistic regression is commonly used for binary classification.\nDecision trees split data based on feature thresholds.\nRandom forests combine multiple decision trees to improve accuracy.\nGradient boosting builds models sequentially to reduce errors.",
     "metadata": {
@@ -46,36 +7,9 @@
       "doc_index": 2138,
       "content_length": 784
     },
-    "similarity_score": 0.45,
-    "rrf_score": 0.45,
-    "rank": 3
-  },
-  {
-    "id": "f357eb52-601f-c59c-c67b-623b5e00b9e7",
-    "content": "•  \nthe dissolution, bankruptcy or insolvency, or the filing of a voluntary bankruptcy petition, by the Manager; or \n•  \na change of control (as defined in the Management Agreement) of the Manager if a majority of the Company’s independent \ndirectors determines, at any point during the 18 months following the change of control, that the change of control was \ndetrimental to the ability of the Manager to perform its duties in substantially the same manner conducted before the change \nof control. \nCause does not include unsatisfactory performance that is materially detrimental to the Company’s business. \nThe Manager may terminate the Management Agreement at its option, (A) in the event that the Company defaults in the",
-    "metadata": {
-      "producer": "Acrobat Distiller 23.0 (Windows)",
-      "creator": "PScript5.dll Version 5.2.2",
-      "creationdate": "2023-04-10T17:33:39-04:00",
-      "source": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/pdf_data/microsoft.pdf",
-      "file_path": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/pdf_data/microsoft.pdf",
-      "total_pages": 160,
-      "format": "PDF 1.7",
-      "title": "Microsoft Word - R1",
-      "author": "VembadiS",
-      "subject": "",
-      "keywords": "",
-      "moddate": "2023-04-12T16:50:19-04:00",
-      "trapped": "",
-      "modDate": "D:20230412165019-04'00'",
-      "creationDate": "D:20230410173339-04'00'",
-      "page": 135,
-      "doc_index": 1280,
-      "content_length": 725
-    },
-    "similarity_score": 0.33333334,
-    "rrf_score": 0.33333334,
-    "rank": 4
+    "similarity_score": 0.8333334,
+    "rrf_score": 0.8333334,
+    "rank": 1
   },
   {
     "id": "b5bdc54a-af1d-23ed-ed9a-a7ceb0f54dea",
@@ -85,8 +19,44 @@
       "doc_index": 2146,
       "content_length": 238
     },
-    "similarity_score": 0.33333334,
-    "rrf_score": 0.33333334,
+    "similarity_score": 0.6111111,
+    "rrf_score": 0.6111111,
+    "rank": 2
+  },
+  {
+    "id": "a36fc3ae-69ff-9880-4ffc-da6476ab1c2d",
+    "content": "Random forests combine multiple decision trees to improve accuracy.\nGradient boosting builds models sequentially to reduce errors.\nOverfitting occurs when a model memorizes training data.\nUnderfitting happens when a model is too simple to learn patterns.\nRegularization techniques help prevent overfitting.\nL1 regularization is also known as Lasso regression.\nL2 regularization is referred to as Ridge regression.\nNeural networks are inspired by the structure of the human brain.\nA perceptron is the basic unit of a neural network.\nDeep learning uses neural networks with many hidden layers.\nActivation functions introduce non-linearity into models.\nReLU is a widely used activation function in deep learning.\nSigmoid functions map values between zero and one.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2139,
+      "content_length": 760
+    },
+    "similarity_score": 0.4166667,
+    "rrf_score": 0.4166667,
+    "rank": 3
+  },
+  {
+    "id": "3a414e3b-34f6-c11f-8cb7-2791ea60ca78",
+    "content": "Optimization algorithms include Adam, SGD, and RMSprop.\nFeature scaling improves model convergence and stability.\nNormalization scales data between a fixed range.\nStandardization centers data around zero mean.\nDimensionality reduction reduces the number of input features.\nPrincipal Component Analysis is a popular reduction technique.\nK-means clustering groups similar data points together.\nThe value of K determines the number of clusters.\nDistance metrics affect clustering performance.\nCosine similarity is used in text-based machine learning.\nNatural language processing applies ML to human language.\nTokenization splits text into smaller units.\nWord embeddings represent words as numerical vectors.\nTF-IDF measures word importance in documents.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2141,
+      "content_length": 750
+    },
+    "similarity_score": 0.4166667,
+    "rrf_score": 0.4166667,
+    "rank": 4
+  },
+  {
+    "id": "195df6aa-a364-881d-1b04-f53a56605a16",
+    "content": "Tokenization splits text into smaller units.\nWord embeddings represent words as numerical vectors.\nTF-IDF measures word importance in documents.\nTransformers are widely used in modern NLP models.\nAttention mechanisms help models focus on relevant data.\nLarge language models are trained on massive datasets.\nFine-tuning adapts pre-trained models to specific tasks.\nTransfer learning reduces training time and data needs.\nComputer vision enables machines to interpret images.\nConvolutional neural networks are used in image tasks.\nFilters in CNNs detect edges and textures.\nPooling layers reduce spatial dimensions.\nObject detection identifies items within an image.\nImage classification assigns labels to images.\nData augmentation increases training data diversity.",
+    "metadata": {
+      "source": "/home/prateek/Prateek/LaunchPad/week7/Day2/pipelines/../data/Raw/text_data/machine_learning.txt",
+      "doc_index": 2142,
+      "content_length": 765
+    },
+    "similarity_score": 0.34285715,
+    "rrf_score": 0.34285715,
     "rank": 5
   }
 ]

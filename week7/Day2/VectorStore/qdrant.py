@@ -8,9 +8,11 @@ import hashlib
 import uuid
 from langchain_core.documents import Document
 from typing import List
-
+from dotenv import load_dotenv
+from pathlib import Path
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(Path(CURR_DIR).parent / ".env")
 
     
 def stable_id(doc: Document) -> str:
@@ -119,7 +121,7 @@ class QdrantVectorStore:
 # Create a reusable qdrant_store instance for querying (does NOT add documents on import)
 qdrant_store = QdrantVectorStore(
     collection_name="rag_documents",
-    url="http://localhost:6333",
+    url=os.environ.get("qdranturl"),
     vector_size=768
 )
 
