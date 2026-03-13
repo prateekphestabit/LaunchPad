@@ -1,5 +1,6 @@
 {
     "tasks": [
-        {"agent": "code_agent", "task": "write a python script to print numbers from 1 to 10"}
+        {"agent": "file_agent", "task": "create a python file named 'test.py' with the content to print the first 100 prime numbers"},
+        {"agent": "code_agent", "task": "execute the 'test.py' file"}
     ]
 }

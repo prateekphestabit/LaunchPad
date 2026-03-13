@@ -1,38 +1,38 @@
 model,prompt,tokens_per_sec,latency_sec,ram_gb,response
 BASE,"ssistant.</s>
 <|user|>
-What is compound ",6.97,14.34,4.61,"Compound interest is a mathematical concept that describes the accumulation of interest earned over time on an investment. Here's how it works:
-
-1. Si"
+What is compound ",6.83,14.64,4.34,Compound interest is a type of interest that grows at a rate different from the simple interest rate. It refers to the accumulated earnings on an inve
 BASE,"ssistant.</s>
 <|user|>
-A stock bought at",6.47,15.29,4.62,"To calculate the total return percentage, divide the gain by the initial investment. In this example, the stock purchased at $50 and sold at $70 with "
+A stock bought at",6.67,15.0,4.35,"To calculate the total return percentage, you need to multiply the return, i.e., the difference between the current share price and the original share"
 BASE,"ssistant.</s>
 <|user|>
-Extract financial",5.85,17.1,4.62,"Extract financial figures:
+Extract financial",6.55,12.83,4.35,"Financial figures:
 
-Apple
-- Revenue: $81.8 billion
-- Gross profit: $22.8 billion
-- Net income: $19.9 billion
-- Gross margin: 28.9%
-- Operating"
+- Q3 Revenue: $81.8 billion (up 5% YoY)
+- Q3 Net Income: $19.9 billion (up 13% YoY)
+
+Source: Apple Inc. Financial results for Q3 2"
 FINE-TUNED,"ssistant.</s>
 <|user|>
-What is compound ",5.29,10.02,5.14,"Compound interest is an equation which represents the interest earned on a sum of money over a certain period, calculated using the formula: (interest"
+What is compound ",6.39,8.92,5.17,Compound interest is the interest earned on an investment that accumulates over time. It is calculated by taking the interest rate at the beginning of
 FINE-TUNED,"ssistant.</s>
 <|user|>
-A stock bought at",5.24,6.68,5.14,Return on investment (ROI) = (Value of stock after dividend payment – Value of stock before dividend payment) / Value of stock before dividend payment
+A stock bought at",5.4,4.44,5.17,Total return percentage is 100% (($70 - $50) / $50)
 FINE-TUNED,"ssistant.</s>
 <|user|>
-Extract financial",4.81,9.14,5.14,"Financial figures extracted from the given text by the following regular expression pattern:
-^(?<financial_feature>([0-9]+[.]?[0-9]{3})).*$"
+Extract financial",6.24,16.04,5.17,"import re
+
+def extract_financial_figures(text):
+    """"""
+    Extract financial figures from a given text.
+    :param text: the text to extract financia"
 QUANTISED-Q4,"ssistant.</s>
 <|user|>
-What is compound ",28.26,1.45,2.91,Compound interest is a financial concept that describes the accumulation of interest over time. It is a calculation that involves the annual interest 
+What is compound ",36.0,1.14,2.94,Compound interest is a financial concept that describes the accumulation of interest over time. It is a calculation that involves the annual interest 
 QUANTISED-Q4,"ssistant.</s>
 <|user|>
-A stock bought at",25.97,0.89,2.91,(100 - 70) * 100 / (50 + 70)
+A stock bought at",25.67,0.9,2.94,(100 - 70) * 100 / (50 + 70)
 QUANTISED-Q4,"ssistant.</s>
 <|user|>
-Extract financial",15.06,0.6,2.91,Revenue: $81.8B
+Extract financial",18.33,0.49,2.94,Revenue: $81.8B

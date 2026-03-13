@@ -14,28 +14,28 @@ async def run_pipeline(query, try_num):
         return "llm was not able to generate a valid answer after multiple attempts. Please try again later."
     # print(f"USER QUERY: {query}\n")
 
-    # # ─── STAGE 1: Orchestrator ───────────────────────────────────────
-    # print("[[[PlannerAgent]]] ==> creating Plan")
-    # plan_output = await plan_steps(query)
+    # ─── STAGE 1: Orchestrator ───────────────────────────────────────
+    print("[[[PlannerAgent]]] ==> creating Plan")
+    plan_output = await plan_steps(query)
 
-    # # ─── STAGE 2: worker ──────────────────────────────────────
-    # print("[[[WorkerAgent]]] ==> working on plan to answer the query")
-    # output1, output2 = await asyncio.gather(
-    #     run_worker(query, plan_output, 1),
-    #     run_worker(query, plan_output, 2),
-    # )
+    # ─── STAGE 2: worker ──────────────────────────────────────
+    print("[[[WorkerAgent]]] ==> working on plan to answer the query")
+    output1, output2 = await asyncio.gather(
+        run_worker(query, plan_output, 1),
+        run_worker(query, plan_output, 2),
+    )
 
-    # # ─── STAGE 3: Reflector ─────────────────────────────────────────
-    # print("[[[ReflectorAgent]]] ==> Reflecting and improving answers")
-    # reflectedOutput1, reflectedOutput2 = await asyncio.gather(
-    #     run_reflector_agent(query, plan_output, output1, 1),
-    #     run_reflector_agent(query, plan_output, output2, 2),
-    # )
+    # ─── STAGE 3: Reflector ─────────────────────────────────────────
+    print("[[[ReflectorAgent]]] ==> Reflecting and improving answers")
+    reflectedOutput1, reflectedOutput2 = await asyncio.gather(
+        run_reflector_agent(query, plan_output, output1, 1),
+        run_reflector_agent(query, plan_output, output2, 2),
+    )
 
-    # ─── Load saved outputs ──────────────────────────────────────────
-    plan_output       = (OUTPUTS_DIR / "Planner.md").read_text()
-    reflectedOutput1  = (OUTPUTS_DIR / "reflector1.md").read_text()
-    reflectedOutput2  = (OUTPUTS_DIR / "reflector2.md").read_text()
+    # # ─── Load saved outputs ──────────────────────────────────────────
+    # plan_output       = (OUTPUTS_DIR / "Planner.md").read_text()
+    # reflectedOutput1  = (OUTPUTS_DIR / "reflector1.md").read_text()
+    # reflectedOutput2  = (OUTPUTS_DIR / "reflector2.md").read_text()
 
     # ─── STAGE 4: Validator ─────────────────────────────────────────
     print("[[[ValidatorAgent]]] ==> Validating reflected answers")

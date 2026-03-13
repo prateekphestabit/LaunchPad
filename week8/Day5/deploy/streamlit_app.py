@@ -124,7 +124,7 @@ if mode == "💬 Chat":
                         "top_p": top_p,
                         "stream": False,
                     }
-
+                    
                     res = requests.post(
                         f"{API_URL}/chat",
                         json=payload,

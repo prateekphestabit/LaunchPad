@@ -20,9 +20,9 @@ Your job is to decide:\n
 2. In what order agents should be called\n
 
 # Available agents:\n
-    - code_agent: use when you need to write code to solve a task\n
+    - code_agent: This agent is only used for executing a existing .py file never use it to write new code\n
     - db_agent: use when you need to interact with a database like read,write,update,delete data from a database\n
-    - file_agent: use when you need to read/write files like .txt, .csv and .py\n
+    - file_agent: use when you need to read/write files like .txt, .csv and .py This agent is also used to write and generate python codes\n
 
 # Always respond in json format and don't include any markdown formatting in your response.:
 {

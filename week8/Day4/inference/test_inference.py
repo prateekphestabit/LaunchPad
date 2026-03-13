@@ -237,7 +237,7 @@ with open(RESULTS_PATH, "w", newline="") as f:
     writer.writeheader()
     writer.writerows(results)
 
-print(f"\n✅ Results saved to {RESULTS_PATH}")
+print(f"\n Results saved to {RESULTS_PATH}")
 
 # ─────────────────────────────────────────
 # 7. SUMMARY TABLE
